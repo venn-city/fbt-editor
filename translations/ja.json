@@ -1,0 +1,365 @@
+{
+  "fb-locale": "ja_JP",
+  "translations": {
+    "025316323d5bb7597ad78e39d37772aa": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u540d\u524d",
+          "variations": {}
+        }
+      ]
+    },
+    "0f4ef5ee61e8dbeacc42549ac24f676f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u52d5\u753b\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u52d5\u753b\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "1315810748fa63a66b18bf9d64032e2e": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u30da\u30fc\u30b8\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u30da\u30fc\u30b8\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "1893f1dc2ad543b243fec0c5c22cb782": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u6027\u5225:",
+          "variations": {}
+        }
+      ]
+    },
+    "1b2ec97fa79c3d163cac76346422f8b1": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u975e\u4eba\u79f0",
+          "variations": {}
+        }
+      ]
+    },
+    "209fd17e3aef1719fadda2f0208fb688": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u30ea\u30f3\u30af\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u30ea\u30f3\u30af\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "23cbcf81d14c2294ba230b45d95ccf56": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u6295\u7a3f\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u6295\u7a3f\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "26d8c764cc951266855af9e375d97105": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u4e0b\u306e\u30d5\u30a9\u30fc\u30e0\u3092\u4f7f\u7528\u3057\u3066\u5b9f\u969b\u306eFBT\u3092\u78ba\u8a8d\u3057\u307e\u3059",
+          "variations": {}
+        }
+      ]
+    },
+    "370370d4d03578bda451f99b8c6a3287": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u7537\u6027(\u5358\u6570)",
+          "variations": {}
+        }
+      ]
+    },
+    "37d0e6c1db7414fee2ef94bc7b5f1575": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u4eba\u6570",
+          "variations": {}
+        }
+      ]
+    },
+    "3ff45e45732c2df5e1febc2c643d369d": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u30ea\u30f3\u30af\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u30ea\u30f3\u30af\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "40bd5bc10bd59fe020569068cfd7d814": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "FBT\u30c7\u30e2",
+          "variations": {}
+        }
+      ]
+    },
+    "4a7e4b119044b338d8b41fab78778d05": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u5199\u771f1\u679a",
+          "variations": {}
+        }
+      ]
+    },
+    "5739394f06e7e659ebe5ad02ef4d427c": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "575a12521c252c5571a66d1995504c83": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u5199\u771f\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u5199\u771f\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "604b966f4a1948aa1efbd6e5c183b3d8": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u8a66\u3059",
+          "variations": {}
+        }
+      ]
+    },
+    "643b77298eef5a450d56374ae678e8d1": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u5973\u6027",
+          "variations": {}
+        }
+      ]
+    },
+    "6a24311c8064b857c0fd320be01f7fb6": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u4e0d\u660e(\u5358\u6570)",
+          "variations": {}
+        }
+      ]
+    },
+    "863fc7cde353c97be1f72eb3f3f06bc2": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u6295\u7a3f\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u6295\u7a3f\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "88a1bc74298abc6f3824ac4dd56135a0": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u5973\u6027(\u5358\u6570)",
+          "variations": {}
+        }
+      ]
+    },
+    "9837339cf62c9262f4d20c0d7999ff93": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u52d5\u753b\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u52d5\u753b\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "a3567d2b112704bff1048a49b93064a2": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u6295\u7a3f\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u6295\u7a3f\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "a95747637ba6cbeeaeef48a2879b1f32": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u52d5\u753b\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u52d5\u753b\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "a9ea27109d11f0318948298570055b3f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u30da\u30fc\u30b8\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u30da\u30fc\u30b8\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "ab362a612bbbb45450265125792a837f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u7537\u6027",
+          "variations": {}
+        }
+      ]
+    },
+    "aba87fbe4df14211e8943f721fa3f563": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u30da\u30fc\u30b8\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u30da\u30fc\u30b8\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "bf9bf2f7d22fa776eaf7838a6dc2da9f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u4e0d\u660e",
+          "variations": {}
+        }
+      ]
+    },
+    "c63ed212602077b1dd58db087991b5af": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u4e0d\u660e(\u8907\u6570)",
+          "variations": {}
+        }
+      ]
+    },
+    "ce5f268d53706acc64dd5e59430be1c8": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u6027\u5225:",
+          "variations": {}
+        }
+      ]
+    },
+    "d1021dd603ef7ed4073bee3d498ccb83": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u898b\u308b",
+          "variations": {}
+        }
+      ]
+    },
+    "d47b9415c39a6e5e042244d77c23bb13": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u5199\u771f{number}\u679a",
+          "variations": {}
+        }
+      ]
+    },
+    "e2a294efdf88fa51379667ac368953f7": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c{=a photo}\u3092\u30b7\u30a7\u30a2\u3057\u307e\u3057\u305f",
+          "variations": {}
+        }
+      ]
+    },
+    "e776d21e0dd182ddd172f444407eb40c": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u5199\u771f\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u5199\u771f\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "ea428b598a1c30f60c9d213822b75ba3": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u30ea\u30f3\u30af\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u30ea\u30f3\u30af\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "f75b97a97fa3772468477f17e0c0a160": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u6587\u306e\u751f\u6210",
+          "variations": {}
+        }
+      ]
+    },
+    "fb144ab202738a4ba0ad63f4c116a982": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name}\u3055\u3093\u304c\u5199\u771f\u3092\u30b7\u30a7\u30a2\u3057\u3066\u3044\u307e\u3059\uff01\u5199\u771f\u3092{=View}",
+          "variations": {}
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,419 @@
+{
+  "fb-locale": "he_IL",
+  "translations": {
+    "025316323d5bb7597ad78e39d37772aa": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05e9\u05dd",
+          "variations": {}
+        }
+      ]
+    },
+    "0f4ef5ee61e8dbeacc42549ac24f676f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05e1\u05e8\u05d8\u05d5\u05df \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d4.",
+          "variations": {}
+        }
+      ]
+    },
+    "1315810748fa63a66b18bf9d64032e2e": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05d3\u05e3 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d4.",
+          "variations": {}
+        }
+      ]
+    },
+    "1893f1dc2ad543b243fec0c5c22cb782": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05d4\u05de\u05d9\u05df \u05e9\u05dc\u05da:",
+          "variations": {}
+        }
+      ]
+    },
+    "1b2ec97fa79c3d163cac76346422f8b1": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc\u05d0 \u05d0\u05d3\u05dd",
+          "variations": {}
+        }
+      ]
+    },
+    "209fd17e3aef1719fadda2f0208fb688": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05e7\u05d9\u05e9\u05d5\u05e8 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d5.",
+          "variations": {}
+        }
+      ]
+    },
+    "23cbcf81d14c2294ba230b45d95ccf56": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05e4\u05d5\u05e1\u05d8 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d4.",
+          "variations": {}
+        }
+      ]
+    },
+    "26d8c764cc951266855af9e375d97105": {
+      "tokens": [
+        "__viewing_user__"
+      ],
+      "types": [
+        3
+      ],
+      "translations": [
+        {
+          "translation": "\u05d4\u05e9\u05ea\u05de\u05e9/\u05d9 \u05d1\u05d8\u05d5\u05e4\u05e1 \u05dc\u05de\u05d8\u05d4 \u05db\u05d3\u05d9 \u05dc\u05e8\u05d0\u05d5\u05ea \u05d0\u05ea FBT \u05d1\u05e4\u05e2\u05d5\u05dc\u05d4.",
+          "variations": {
+            "0": 3
+          }
+        },
+        {
+          "translation": "\u05d4\u05e9\u05ea\u05de\u05e9\u05d9 \u05d1\u05d8\u05d5\u05e4\u05e1 \u05dc\u05de\u05d8\u05d4 \u05db\u05d3\u05d9 \u05dc\u05e8\u05d0\u05d5\u05ea \u05d0\u05ea FBT \u05d1\u05e4\u05e2\u05d5\u05dc\u05d4.",
+          "variations": {
+            "0": 2
+          }
+        },
+        {
+          "translation": "\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1\u05d8\u05d5\u05e4\u05e1 \u05dc\u05de\u05d8\u05d4 \u05db\u05d3\u05d9 \u05dc\u05e8\u05d0\u05d5\u05ea \u05d0\u05ea FBT \u05d1\u05e4\u05e2\u05d5\u05dc\u05d4.",
+          "variations": {
+            "0": 1
+          }
+        }
+      ]
+    },
+    "370370d4d03578bda451f99b8c6a3287": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05d6\u05db\u05e8 (\u05d9\u05d7\u05d9\u05d3)",
+          "variations": {}
+        }
+      ]
+    },
+    "37d0e6c1db7414fee2ef94bc7b5f1575": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05e1\u05e4\u05d9\u05e8\u05d4",
+          "variations": {}
+        }
+      ]
+    },
+    "3ff45e45732c2df5e1febc2c643d369d": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05e7\u05d9\u05e9\u05d5\u05e8 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d5/\u05e9\u05dc\u05d4.",
+          "variations": {}
+        }
+      ]
+    },
+    "40bd5bc10bd59fe020569068cfd7d814": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05d4\u05d3\u05d2\u05de\u05ea \u05d4-FBT \u05e9\u05dc\u05da",
+          "variations": {}
+        }
+      ]
+    },
+    "4a7e4b119044b338d8b41fab78778d05": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05ea\u05de\u05d5\u05e0\u05d4",
+          "variations": {}
+        }
+      ]
+    },
+    "5739394f06e7e659ebe5ad02ef4d427c": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "575a12521c252c5571a66d1995504c83": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05ea\u05de\u05d5\u05e0\u05d4 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d5/\u05e9\u05dc\u05d4.",
+          "variations": {}
+        }
+      ]
+    },
+    "604b966f4a1948aa1efbd6e5c183b3d8": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05db\u05d3\u05d0\u05d9 \u05dc\u05e0\u05e1\u05d5\u05ea!",
+          "variations": {}
+        }
+      ]
+    },
+    "643b77298eef5a450d56374ae678e8d1": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05e0\u05e7\u05d1\u05d4",
+          "variations": {}
+        }
+      ]
+    },
+    "6a24311c8064b857c0fd320be01f7fb6": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc\u05d0 \u05d9\u05d3\u05d5\u05e2 (\u05d9\u05d7\u05d9\u05d3)",
+          "variations": {}
+        }
+      ]
+    },
+    "863fc7cde353c97be1f72eb3f3f06bc2": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05e4\u05d5\u05e1\u05d8 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d5.",
+          "variations": {}
+        }
+      ]
+    },
+    "88a1bc74298abc6f3824ac4dd56135a0": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05e0\u05e7\u05d1\u05d4 (\u05d9\u05d7\u05d9\u05d3)",
+          "variations": {}
+        }
+      ]
+    },
+    "9837339cf62c9262f4d20c0d7999ff93": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05e1\u05e8\u05d8\u05d5\u05df \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d5/\u05e9\u05dc\u05d4.",
+          "variations": {}
+        }
+      ]
+    },
+    "a3567d2b112704bff1048a49b93064a2": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05e4\u05d5\u05e1\u05d8 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d5/\u05e9\u05dc\u05d4.",
+          "variations": {}
+        }
+      ]
+    },
+    "a95747637ba6cbeeaeef48a2879b1f32": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05e1\u05e8\u05d8\u05d5\u05df \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d5.",
+          "variations": {}
+        }
+      ]
+    },
+    "a9ea27109d11f0318948298570055b3f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05d3\u05e3 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d5/\u05e9\u05dc\u05d4.",
+          "variations": {}
+        }
+      ]
+    },
+    "ab362a612bbbb45450265125792a837f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05d6\u05db\u05e8",
+          "variations": {}
+        }
+      ]
+    },
+    "aba87fbe4df14211e8943f721fa3f563": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05d3\u05e3 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d5.",
+          "variations": {}
+        }
+      ]
+    },
+    "bf9bf2f7d22fa776eaf7838a6dc2da9f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc\u05d0 \u05d9\u05d3\u05d5\u05e2",
+          "variations": {}
+        }
+      ]
+    },
+    "c63ed212602077b1dd58db087991b5af": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc\u05d0 \u05d9\u05d3\u05d5\u05e2 (\u05e8\u05d1\u05d9\u05dd)",
+          "variations": {}
+        }
+      ]
+    },
+    "ce5f268d53706acc64dd5e59430be1c8": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05de\u05d9\u05df:",
+          "variations": {}
+        }
+      ]
+    },
+    "d1021dd603ef7ed4073bee3d498ccb83": {
+      "tokens": [
+        "__viewing_user__"
+      ],
+      "types": [
+        3
+      ],
+      "translations": [
+        {
+          "translation": "\u05e6\u05e4\u05d9",
+          "variations": {
+            "0": 2
+          }
+        },
+        {
+          "translation": "\u05e6\u05e4\u05d4",
+          "variations": {
+            "0": 1
+          }
+        },
+        {
+          "translation": "\u05e6\u05e4\u05d4/\u05e6\u05e4\u05d9",
+          "variations": {
+            "0": 3
+          }
+        }
+      ]
+    },
+    "d47b9415c39a6e5e042244d77c23bb13": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{number} \u05ea\u05de\u05d5\u05e0\u05d5\u05ea",
+          "variations": {}
+        }
+      ]
+    },
+    "e2a294efdf88fa51379667ac368953f7": {
+      "tokens": [
+        "name"
+      ],
+      "types": [
+        3
+      ],
+      "translations": [
+        {
+          "translation": "{name} \u05e9\u05d9\u05ea\u05e4\u05d4 \u05d0\u05d9\u05ea\u05da {=a photo}",
+          "variations": {
+            "0": 2
+          }
+        },
+        {
+          "translation": "{name} \u05e9\u05d9\u05ea\u05e3 \u05d0\u05d9\u05ea\u05da {=a photo}",
+          "variations": {
+            "0": 1
+          }
+        },
+        {
+          "translation": "{name} \u05e9\u05d9\u05ea\u05e3/\u05e9\u05d9\u05ea\u05e4\u05d4 \u05d0\u05d9\u05ea\u05da {=a photo}",
+          "variations": {
+            "0": 3
+          }
+        }
+      ]
+    },
+    "e776d21e0dd182ddd172f444407eb40c": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05ea\u05de\u05d5\u05e0\u05d4 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d4.",
+          "variations": {}
+        }
+      ]
+    },
+    "ea428b598a1c30f60c9d213822b75ba3": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05e7\u05d9\u05e9\u05d5\u05e8 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d4.",
+          "variations": {}
+        }
+      ]
+    },
+    "f75b97a97fa3772468477f17e0c0a160": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05d1\u05e0\u05d9\u05d9\u05ea \u05de\u05e9\u05e4\u05d8\u05d9\u05dd",
+          "variations": {}
+        }
+      ]
+    },
+    "fb144ab202738a4ba0ad63f4c116a982": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u05dc{name} \u05d9\u05e9 \u05ea\u05de\u05d5\u05e0\u05d4 \u05db\u05d3\u05d9 \u05dc\u05e9\u05ea\u05e3! {=View} \u05d1\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05dc\u05d5.",
+          "variations": {}
+        }
+      ]
+    }
+  }
+}
