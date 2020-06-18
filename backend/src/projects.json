@@ -1,18 +1,10 @@
 {
   "projects": [
     {
-      "projectName": "translation-dudyk",
-      "bucketName": "translation-dudyk",
-      "accessKeyId": "AKIAXTGWDEHVB72ZC6OK",
-      "secretAccessKey": "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",
-      "region": "eu-central-1",
-      "sourceFileName": "translation_input.json"
-    },
-    {
-      "projectName": "translation-dudyk2",
-      "bucketName": "translation-dudyk",
-      "accessKeyId": "AKIAXTGWDEHVB72ZC6OK",
-      "secretAccessKey": "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",
+      "projectName": "projectName",
+      "bucketName": "bucketName",
+      "accessKeyId": "",
+      "secretAccessKey": "",
       "region": "eu-central-1",
       "sourceFileName": "translation_input.json"
     }
