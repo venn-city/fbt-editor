@@ -1,0 +1,403 @@
+{
+  "fb-locale": "fb_HX",
+  "translations": {
+    "40bd5bc10bd59fe020569068cfd7d814": {
+      "tokens": [
+        "__viewing_user__"
+      ],
+      "types": [
+        3
+      ],
+      "translations": [
+        {
+          "translation": "Y0u\u042f \u2132\u0411\u30c6 D3m0",
+          "variations": [
+            1
+          ]
+        },
+        {
+          "translation": "Y0ur \ua76d\u00df\u30c6 D3m0",
+          "variations": [
+            2
+          ]
+        },
+        {
+          "translation": "Y()u\u042f \ua77c\u00df\u30c6 D3m0",
+          "variations": [
+            3
+          ]
+        }
+      ]
+    },
+    "f75b97a97fa3772468477f17e0c0a160": {
+      "tokens": [
+        "__viewing_user__"
+      ],
+      "types": [
+        3
+      ],
+      "translations": [
+        {
+          "translation": "(0n5+ruc+ 53nt3n<35",
+          "variations": [
+            1
+          ]
+        },
+        {
+          "translation": "C0n$7ruc7 $3nt3nc3$",
+          "variations": [
+            2
+          ]
+        },
+        {
+          "translation": "C()n57ruc7 53nt3nc35",
+          "variations": [
+            3
+          ]
+        }
+      ]
+    },
+    "26d8c764cc951266855af9e375d97105": {
+      "tokens": [
+        "__viewing_user__"
+      ],
+      "types": [
+        3
+      ],
+      "translations": [
+        {
+          "translation": "|_|53 +h3 ph0\u042f/X\\ |o310w +0 533 \u2132\u0411\u30c6 in 4c+10n.",
+          "variations": [
+            1
+          ]
+        },
+        {
+          "translation": "|_|53 +h3 \ua76d0\u042fM |o310w +0 533 \ua76d\u00df\u30c6 in 4c+10n.",
+          "variations": [
+            2
+          ]
+        },
+        {
+          "translation": "|_|53 +h3 ph0\u042f/X\\ |o310w +0 533 \ua77c\u00df\u30c6 in 4c+10n.",
+          "variations": [
+            3
+          ]
+        }
+      ]
+    },
+    "1893f1dc2ad543b243fec0c5c22cb782": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "Your Gender:",
+          "variations": []
+        }
+      ]
+    },
+    "bf9bf2f7d22fa776eaf7838a6dc2da9f": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "Unknown",
+          "variations": []
+        }
+      ]
+    },
+    "ab362a612bbbb45450265125792a837f": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "Male",
+          "variations": []
+        }
+      ]
+    },
+    "643b77298eef5a450d56374ae678e8d1": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "Female",
+          "variations": []
+        }
+      ]
+    },
+    "025316323d5bb7597ad78e39d37772aa": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "name",
+          "variations": []
+        }
+      ]
+    },
+    "37d0e6c1db7414fee2ef94bc7b5f1575": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "count",
+          "variations": []
+        }
+      ]
+    },
+    "ce5f268d53706acc64dd5e59430be1c8": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "Gender:",
+          "variations": []
+        }
+      ]
+    },
+    "e2a294efdf88fa51379667ac368953f7": {
+      "tokens": [
+        "name"
+      ],
+      "types": [
+        3
+      ],
+      "translations": [
+        {
+          "translation": "{name} h45 5h4r3d {=a photo} w1th y0u",
+          "variations": []
+        }
+      ]
+    },
+    "4a7e4b119044b338d8b41fab78778d05": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": " a photo",
+          "variations": []
+        }
+      ]
+    },
+    "1b2ec97fa79c3d163cac76346422f8b1": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "Not a person",
+          "variations": []
+        }
+      ]
+    },
+    "c63ed212602077b1dd58db087991b5af": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "Unknown (Plural)",
+          "variations": []
+        }
+      ]
+    },
+    "6a24311c8064b857c0fd320be01f7fb6": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "Unknown (singular)",
+          "variations": []
+        }
+      ]
+    },
+    "370370d4d03578bda451f99b8c6a3287": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "Male (singular)",
+          "variations": []
+        }
+      ]
+    },
+    "88a1bc74298abc6f3824ac4dd56135a0": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "Female (singular)",
+          "variations": []
+        }
+      ]
+    },
+    "ea428b598a1c30f60c9d213822b75ba3": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a link to 5h@r3! {=View} her link.",
+          "variations": []
+        }
+      ]
+    },
+    "209fd17e3aef1719fadda2f0208fb688": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a link to 5h@r3! {=View} his link.",
+          "variations": []
+        }
+      ]
+    },
+    "3ff45e45732c2df5e1febc2c643d369d": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a link to 5h@r3! {=View} their link.",
+          "variations": []
+        }
+      ]
+    },
+    "1315810748fa63a66b18bf9d64032e2e": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a page to 5h@r3! {=View} her page.",
+          "variations": []
+        }
+      ]
+    },
+    "aba87fbe4df14211e8943f721fa3f563": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a page to 5h@r3! {=View} his page.",
+          "variations": []
+        }
+      ]
+    },
+    "a9ea27109d11f0318948298570055b3f": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a page to 5h@r3! {=View} their page.",
+          "variations": []
+        }
+      ]
+    },
+    "e776d21e0dd182ddd172f444407eb40c": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a photo to 5h@r3! {=View} her photo.",
+          "variations": []
+        }
+      ]
+    },
+    "fb144ab202738a4ba0ad63f4c116a982": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a photo to 5h@r3! {=View} his photo.",
+          "variations": []
+        }
+      ]
+    },
+    "575a12521c252c5571a66d1995504c83": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a photo to 5h@r3! {=View} their photo.",
+          "variations": []
+        }
+      ]
+    },
+    "23cbcf81d14c2294ba230b45d95ccf56": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a post to 5h@r3! {=View} her post.",
+          "variations": []
+        }
+      ]
+    },
+    "863fc7cde353c97be1f72eb3f3f06bc2": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a post to 5h@r3! {=View} his post.",
+          "variations": []
+        }
+      ]
+    },
+    "a3567d2b112704bff1048a49b93064a2": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a post to 5h@r3! {=View} their post.",
+          "variations": []
+        }
+      ]
+    },
+    "0f4ef5ee61e8dbeacc42549ac24f676f": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a video to 5h@r3! {=View} her video.",
+          "variations": []
+        }
+      ]
+    },
+    "a95747637ba6cbeeaeef48a2879b1f32": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h@5 a video to 5h@r3! {=View} his video.",
+          "variations": []
+        }
+      ]
+    },
+    "9837339cf62c9262f4d20c0d7999ff93": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "{name} h4s 4 v1d30 t0 5h4r3! {=View} th31r v1d3e0.",
+          "variations": []
+        }
+      ]
+    },
+    "d1021dd603ef7ed4073bee3d498ccb83": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "V13w",
+          "variations": []
+        }
+      ]
+    },
+    "604b966f4a1948aa1efbd6e5c183b3d8": {
+      "tokens": {},
+      "types": {},
+      "translations": [
+        {
+          "translation": "7r`/ 1+ 0u+!",
+          "variations": []
+        }
+      ]
+    }
+  }
+}

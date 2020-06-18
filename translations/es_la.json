@@ -1,0 +1,365 @@
+{
+  "fb-locale": "es_LA",
+  "translations": {
+    "025316323d5bb7597ad78e39d37772aa": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "nombre",
+          "variations": {}
+        }
+      ]
+    },
+    "0f4ef5ee61e8dbeacc42549ac24f676f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene un video para compartir. {=View} el video.",
+          "variations": {}
+        }
+      ]
+    },
+    "1315810748fa63a66b18bf9d64032e2e": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene una p\u00e1gina para compartir. {=View} la p\u00e1gina.",
+          "variations": {}
+        }
+      ]
+    },
+    "1893f1dc2ad543b243fec0c5c22cb782": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Tu sexo:",
+          "variations": {}
+        }
+      ]
+    },
+    "1b2ec97fa79c3d163cac76346422f8b1": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "No es una persona",
+          "variations": {}
+        }
+      ]
+    },
+    "209fd17e3aef1719fadda2f0208fb688": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene un enlace para compartir. {=View} el enlace.",
+          "variations": {}
+        }
+      ]
+    },
+    "23cbcf81d14c2294ba230b45d95ccf56": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene una publicaci\u00f3n para compartir. {=View} la publicaci\u00f3n.",
+          "variations": {}
+        }
+      ]
+    },
+    "26d8c764cc951266855af9e375d97105": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Usa el siguiente formulario  para ver FBT en acci\u00f3n.",
+          "variations": {}
+        }
+      ]
+    },
+    "370370d4d03578bda451f99b8c6a3287": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Hombre (singular)",
+          "variations": {}
+        }
+      ]
+    },
+    "37d0e6c1db7414fee2ef94bc7b5f1575": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "n\u00famero",
+          "variations": {}
+        }
+      ]
+    },
+    "3ff45e45732c2df5e1febc2c643d369d": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene un enlace para compartir. {=View} el enlace.",
+          "variations": {}
+        }
+      ]
+    },
+    "40bd5bc10bd59fe020569068cfd7d814": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Tu demo de FBT",
+          "variations": {}
+        }
+      ]
+    },
+    "4a7e4b119044b338d8b41fab78778d05": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "una foto",
+          "variations": {}
+        }
+      ]
+    },
+    "5739394f06e7e659ebe5ad02ef4d427c": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{=View}",
+          "variations": {}
+        }
+      ]
+    },
+    "575a12521c252c5571a66d1995504c83": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene una foto para compartir. {=View} la foto.",
+          "variations": {}
+        }
+      ]
+    },
+    "604b966f4a1948aa1efbd6e5c183b3d8": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "\u00a1Pru\u00e9balo!",
+          "variations": {}
+        }
+      ]
+    },
+    "643b77298eef5a450d56374ae678e8d1": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Mujer",
+          "variations": {}
+        }
+      ]
+    },
+    "6a24311c8064b857c0fd320be01f7fb6": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Desconocido (singular)",
+          "variations": {}
+        }
+      ]
+    },
+    "863fc7cde353c97be1f72eb3f3f06bc2": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene una publicaci\u00f3n para compartir. {=View} la publicaci\u00f3n.",
+          "variations": {}
+        }
+      ]
+    },
+    "88a1bc74298abc6f3824ac4dd56135a0": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Mujer (singular)",
+          "variations": {}
+        }
+      ]
+    },
+    "9837339cf62c9262f4d20c0d7999ff93": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene un video para compartir. {=View} el video.",
+          "variations": {}
+        }
+      ]
+    },
+    "a3567d2b112704bff1048a49b93064a2": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene una publicaci\u00f3n para compartir. {=View} la publicaci\u00f3n.",
+          "variations": {}
+        }
+      ]
+    },
+    "a95747637ba6cbeeaeef48a2879b1f32": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene un video para compartir. {=View} el video.",
+          "variations": {}
+        }
+      ]
+    },
+    "a9ea27109d11f0318948298570055b3f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene una p\u00e1gina para compartir. {=View} la p\u00e1gina.",
+          "variations": {}
+        }
+      ]
+    },
+    "ab362a612bbbb45450265125792a837f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Hombre",
+          "variations": {}
+        }
+      ]
+    },
+    "aba87fbe4df14211e8943f721fa3f563": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene una p\u00e1gina para compartir. {=View} la p\u00e1gina.",
+          "variations": {}
+        }
+      ]
+    },
+    "bf9bf2f7d22fa776eaf7838a6dc2da9f": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Desconocido",
+          "variations": {}
+        }
+      ]
+    },
+    "c63ed212602077b1dd58db087991b5af": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Desconocido (plural)",
+          "variations": {}
+        }
+      ]
+    },
+    "ce5f268d53706acc64dd5e59430be1c8": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Sexo:",
+          "variations": {}
+        }
+      ]
+    },
+    "d1021dd603ef7ed4073bee3d498ccb83": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Mira",
+          "variations": {}
+        }
+      ]
+    },
+    "d47b9415c39a6e5e042244d77c23bb13": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{number} fotos",
+          "variations": {}
+        }
+      ]
+    },
+    "e2a294efdf88fa51379667ac368953f7": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} comparti\u00f3 {=a photo} contigo",
+          "variations": {}
+        }
+      ]
+    },
+    "e776d21e0dd182ddd172f444407eb40c": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene una foto para compartir. {=View} la foto.",
+          "variations": {}
+        }
+      ]
+    },
+    "ea428b598a1c30f60c9d213822b75ba3": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene un enlace para compartir. {=View} el enlace.",
+          "variations": {}
+        }
+      ]
+    },
+    "f75b97a97fa3772468477f17e0c0a160": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "Construye oraciones",
+          "variations": {}
+        }
+      ]
+    },
+    "fb144ab202738a4ba0ad63f4c116a982": {
+      "tokens": [],
+      "types": [],
+      "translations": [
+        {
+          "translation": "{name} tiene una foto para compartir. {=View} la foto.",
+          "variations": {}
+        }
+      ]
+    }
+  }
+}
