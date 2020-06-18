@@ -3,8 +3,16 @@
     {
       "projectName": "translation-dudyk",
       "bucketName": "translation-dudyk",
-      "accessKeyId": "AKIAJP7T6BUP64SIVABA",
-      "secretAccessKey": "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",
+      "accessKeyId": "AKIAXTGWDEHVB72ZC6OK",
+      "secretAccessKey": "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",
+      "region": "eu-central-1",
+      "sourceFileName": "translation_input.json"
+    },
+    {
+      "projectName": "translation-dudyk2",
+      "bucketName": "translation-dudyk",
+      "accessKeyId": "AKIAXTGWDEHVB72ZC6OK",
+      "secretAccessKey": "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",
       "region": "eu-central-1",
       "sourceFileName": "translation_input.json"
     }

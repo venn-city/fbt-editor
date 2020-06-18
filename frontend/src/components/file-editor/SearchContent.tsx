@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { Grid, IconButton, InputAdornment, makeStyles, TextField } from '@material-ui/core'
-import SearchIcon from '@material-ui/icons/Search'
-import CloseIcon from '@material-ui/icons/Close'
-import { useDispatch } from 'react-redux'
-import { useDebounce } from 'use-debounce'
-
-import { clearFilteredFileContent, setFilteredFileContent } from '../../store/duck/fileContent'
+import { Grid, IconButton, InputAdornment, makeStyles, TextField } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import SearchIcon from '@material-ui/icons/Search';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useDebounce } from 'use-debounce';
+import { clearFilteredFileContent, setFilteredFileContent } from '../../store/duck/fileContent';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,43 +15,39 @@ const useStyles = makeStyles(theme => ({
   },
   input: {
     padding: 0,
-  }
-}), { name: 'SearchContent' })
+  },
+}), { name: 'SearchContent' });
 
 const SearchContent = () => {
-  const classes = useStyles()
-  const dispatch = useDispatch()
+  const classes = useStyles();
+  const dispatch = useDispatch();
 
-  const [searchTerm, setSearchTerm] = useState('')
-  const [openSearch, setOpenSearch] = useState(false)
-  const [debouncedSearchTerm] = useDebounce(searchTerm, 500)
+  const [searchTerm, setSearchTerm] = useState('');
+  const [openSearch, setOpenSearch] = useState(false);
+  const [debouncedSearchTerm] = useDebounce(searchTerm, 500);
 
   useEffect(() => {
     if (debouncedSearchTerm.length > 1) {
-      dispatch(setFilteredFileContent(debouncedSearchTerm))
+      dispatch(setFilteredFileContent(debouncedSearchTerm));
       return () => {
-        dispatch(clearFilteredFileContent())
-      }
+        dispatch(clearFilteredFileContent());
+      };
     }
-  }, [debouncedSearchTerm])
+  }, [debouncedSearchTerm, dispatch]);
 
   return (
     <Grid
-      md={7}
       container
       item
+      md
       alignItems="center"
-      justify='flex-end'
       className={classes.root}
+      justify="flex-end"
     >
       {openSearch && (
         <Grid container item md>
           <TextField
             autoFocus
-            placeholder="Search"
-            type="text"
-            value={searchTerm}
-            onChange={({ target: { value } }: any) => setSearchTerm(value)}
             fullWidth
             InputProps={{
               startAdornment: (
@@ -63,17 +58,22 @@ const SearchContent = () => {
               classes: {
                 notchedOutline: classes.searchField,
                 input: classes.input,
-              }
+              },
             }}
+            placeholder="Search"
+            type="text"
+            value={searchTerm}
             variant="outlined"
+            onChange={({ target: { value } }: any) => setSearchTerm(value)}
           />
         </Grid>
       )}
       <Grid item>
         <IconButton onClick={() => {
-          setSearchTerm('')
-          setOpenSearch(!openSearch)
-        }}>
+          setSearchTerm('');
+          setOpenSearch(!openSearch);
+        }}
+        >
           {openSearch
             ? <CloseIcon />
             : <SearchIcon />
@@ -81,7 +81,7 @@ const SearchContent = () => {
         </IconButton>
       </Grid>
     </Grid>
-  )
-}
+  );
+};
 
-export default SearchContent
+export default SearchContent;

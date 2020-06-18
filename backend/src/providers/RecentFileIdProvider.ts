@@ -1,17 +1,21 @@
+import { RecentFile } from '@entities/RecentFile';
 import _ from 'lodash';
+import path from 'path';
 
 class RecentFileIdProvider {
-    private projectFileIds: string[] = [];
+    private readonly recentFiles: RecentFile[] = [];
 
-    public getAll(): string[] {
-        return this.projectFileIds;
+    public getAll(): RecentFile[] {
+        return this.recentFiles;
     }
 
-    public add(projectFileId: string) {
-        if (_.includes(this.projectFileIds, projectFileId)) {
+    public add(fileId: string, projectId: string) {
+
+        if (_.some(_.filter(this.recentFiles,
+             (recentFile: RecentFile) => recentFile.projectId === projectId && recentFile.id === fileId))) {
             return;
         }
-        this.projectFileIds.push(projectFileId);
+        this.recentFiles.push(new RecentFile(fileId, path.basename(fileId), projectId));
     }
 }
 

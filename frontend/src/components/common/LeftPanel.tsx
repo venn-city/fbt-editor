@@ -1,16 +1,16 @@
-import React from 'react'
 import {
-  Grid,
-  makeStyles,
-  InputAdornment,
-  IconButton,
-  FormControl,
-  InputLabel,
   FilledInput,
+  FormControl,
+  Grid,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  makeStyles,
   Typography,
-} from '@material-ui/core'
-import SortIcon from '@material-ui/icons/Sort'
-import AccountCircleIcon from '@material-ui/icons/AccountCircle'
+} from '@material-ui/core';
+import SortIcon from '@material-ui/icons/Sort';
+import React from 'react';
+import { Item } from '../../store/entities';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,9 +23,9 @@ const useStyles = makeStyles(theme => ({
   },
   searchLabel: {
     fontFamily: 'Roboto',
-    fontSize: 16,
+    fontSize: 14,
     color: 'rgba(0, 0, 0, 0.40)',
-    lineHeight: '12px',
+    lineHeight: '16px',
   },
   input: {
     width: 254,
@@ -63,37 +63,44 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 26,
     marginBottom: 20,
   },
-}), { name: 'LeftPanel' })
+}), { name: 'LeftPanel' });
 
-const LeftPanel = ({ searchLabel = 'Recent files', files = [], onSortClick, onItemClick }: any) => {
-  const classes = useStyles()
+export interface LeftPanelProps {
+  searchLabel: string;
+  items: Item[],
+  onSortClick: () => void;
+  onItemClick: (item: Item) => void;
+}
+
+const LeftPanel = ({ searchLabel = 'Recent files', items = [], onSortClick, onItemClick }: LeftPanelProps) => {
+  const classes = useStyles();
   return (
     <Grid
-      item
       container
+      item
+      className={classes.root}
       direction="column"
       justify="space-between"
-      className={classes.root}
     >
       <Grid
-        item
         container
-        justify="center"
+        item
         className={classes.searchContainer}
+        justify="center"
       >
-        <FormControl variant="filled" classes={{ root: classes.input }}>
+        <FormControl classes={{ root: classes.input }} variant="filled">
           <InputLabel classes={{ root: classes.searchLabel }}>
             {searchLabel}
           </InputLabel>
           <FilledInput
-            disabled
             disableUnderline
+            disabled
             classes={{ root: classes.filledInput }}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
-                  onClick={onSortClick}
                   edge="end"
+                  onClick={onSortClick}
                 >
                   <SortIcon className={classes.sortIcon} />
                 </IconButton>
@@ -103,15 +110,16 @@ const LeftPanel = ({ searchLabel = 'Recent files', files = [], onSortClick, onIt
         </FormControl>
 
         <Grid container item className={classes.listFilesContainer}>
-          {files.map((file: any) =>
-            <Typography onClick={() => onItemClick(file.id)} key={file.id} variant="body2" className={classes.text}>
-              {file.id}
+          {items.map((item: Item) => (
+            <Typography className={classes.text} key={item.id} variant="body2" onClick={() => onItemClick(item)}>
+              {item.id}
             </Typography>
+          ),
           )}
         </Grid>
       </Grid>
     </Grid>
-  )
-}
+  );
+};
 
-export default LeftPanel
+export default LeftPanel;

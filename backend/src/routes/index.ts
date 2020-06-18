@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import ProjectsRouter from './Projects';
-import ProjectItemsRouter from './ProjectItems';
 import ProjectItemContentRouter from './ProjectItemContent';
+import ProjectItemsRouter from './ProjectItems';
+import ProjectsRouter from './Projects';
 import RecentFilesRouter from './RecentFile';
 
 // Init router and path

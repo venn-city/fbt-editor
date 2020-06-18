@@ -1,51 +1,55 @@
-import S3BucketRepository from 'src/repositories/S3BucketRepository';
-import path from 'path';
 import TranslationSourceFile from '@entities/TranslationSourceFile';
 import TranslationTargetFile from '@entities/TranslationTargetFile';
+import path from 'path';
+import S3BucketRepository from 'src/repositories/S3BucketRepository';
 import ProjectProvider from './ProjectProvider';
 
 export default class TranslationFilesProvider {
     private readonly s3BucketRepository: S3BucketRepository = new S3BucketRepository();
     private readonly projectProvider: ProjectProvider = new ProjectProvider();
 
-    public async getTranslationSourceFile(projectName: string, fileId: string): Promise<TranslationSourceFile> {
-        var sourceFileName = this.projectProvider.getSourceFileName(projectName);
-        var translationInputId = this.getTranslationInputId(fileId, sourceFileName);
+    public async getTranslationSourceFile(projectId: string, fileId: string): Promise<TranslationSourceFile> {
+        const sourceFileName = this.projectProvider.getSourceFileName(projectId);
+        const translationInputId = this.getTranslationInputId(fileId, sourceFileName);
+        let fileContent: AWS.S3.Types.GetObjectOutput;
         try {
-            var fileContent: AWS.S3.Types.GetObjectOutput = await this.s3BucketRepository.getBucketObjectContent(projectName, translationInputId);
+            fileContent = await this.s3BucketRepository.getBucketObjectContent(projectId, translationInputId);
+        } catch(e) {
+            throw new Error(`File ${path.basename(sourceFileName)} does not exist in folder.`);
         }
-        catch(e) {
-            throw new Error(`File ${path.basename(sourceFileName)} does not exist in folder.`)
-        }
-        var translationFile: TranslationSourceFile = JSON.parse(fileContent.Body!.toString()) as TranslationSourceFile
+        const translationFile: TranslationSourceFile = JSON.parse(fileContent.Body!.toString()) as TranslationSourceFile;
         if (!translationFile) {
-            throw new Error(`File ${sourceFileName} does not have valid format.`)
+            throw new Error(`File ${sourceFileName} does not have valid format.`);
         }
         return translationFile;
     }
 
     private getTranslationInputId(fileId: string, sourceFileName: string | undefined) {
-        const directory = path.dirname(fileId)
-        if (directory == ".") {
+        const directory = path.dirname(fileId);
+        if (directory === ".") {
             return sourceFileName;
         }
-        return path.dirname(fileId) + "/" + sourceFileName;
+        return `${path.dirname(fileId)}/${sourceFileName}`;
     }
 
-    public async getTranslationTargetFile(projectName: string, projectFileId: string): Promise<TranslationTargetFile> {
+    public async getTranslationTargetFile(projectId: string, projectFileId: string): Promise<TranslationTargetFile> {
+        let fileContent: AWS.S3.Types.GetObjectOutput;
         try {
-            var fileContent: AWS.S3.Types.GetObjectOutput = await this.s3BucketRepository.getBucketObjectContent(projectName, projectFileId);
-        }
-        catch(e) {
-            throw new Error(`File ${path.basename(projectFileId)} does not exist.`)
+            fileContent = await this.s3BucketRepository.getBucketObjectContent(projectId, projectFileId);
+        } catch(e) {
+            throw new Error(`File ${path.basename(projectFileId)} does not exist.`);
         }
         if (fileContent.ContentLength! > 0) {
-            var fileBody = JSON.parse(fileContent.Body!.toString());
-            var translationFile: TranslationTargetFile = fileBody;
-            translationFile.locale = fileBody['fb-locale'];
-            return translationFile
+            const fileBody = JSON.parse(fileContent.Body!.toString());
+            const translationFile: TranslationTargetFile = fileBody;
+            const targetLanguage = fileBody['fb-locale'];
+            if (!targetLanguage) {
+                throw new Error(`Target language has not been specified in file ${path.basename(projectFileId)}`);
+            }
+            translationFile.locale = targetLanguage;
+            return translationFile;
         }
-        
+
         return new TranslationTargetFile("default", {});
     }
 }

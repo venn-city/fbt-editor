@@ -1,45 +1,38 @@
-import { all, put, takeEvery } from 'redux-saga/effects'
+import { ApiError } from "../../utils/errorTypes";
 
-export const ADD_LAST_ERROR = 'errors/ADD_LAST_ERROR'
-export const CLEAR_LAST_ERROR = 'errors/CLEAR_LAST_ERROR'
+export const ADD_LAST_ERROR = 'errors/ADD_LAST_ERROR';
+export const CLEAR_LAST_ERROR = 'errors/CLEAR_LAST_ERROR';
 
-export const addLastError = (error: any) => ({ type: ADD_LAST_ERROR, error })
-export const clearLastError = () => ({ type: CLEAR_LAST_ERROR })
-
-const INITIAL_STATE = {
-  lastError: null,
+export interface ErrorsState {
+  lastError: ApiError;
 }
 
-const errorMatcher: any = (action: any) => action.type.match('_FAILURE$')
+export interface ErrorsAction {
+  type: string;
+  error: ApiError
+}
 
-export const errorsReducer = (state = INITIAL_STATE, action: any) => {
+const INITIAL_STATE: ErrorsState = {
+  lastError: {} as ApiError,
+};
+
+export const addLastError = (error: ApiError) => ({ type: ADD_LAST_ERROR, error });
+export const clearLastError = () => ({ type: CLEAR_LAST_ERROR });
+
+export const errorsReducer = (state: ErrorsState = INITIAL_STATE, action: ErrorsAction):ErrorsState => {
   switch (action.type) {
     case ADD_LAST_ERROR:
-      return { ...state, lastError: action.error }
+      return {
+        ...state,
+        lastError: action.error,
+      };
     case CLEAR_LAST_ERROR:
-      return { ...state, lastError: null }
+      return { ...state, lastError: {} as ApiError  };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export const getErrors = (state: any) => state.errors
-export const getLastError = (state: any) => getErrors(state).lastError
+export const getErrors = (state: {errors: ErrorsState }):ErrorsState => state.errors;
+export const getLastError = (state: {errors: ErrorsState }):ApiError => getErrors(state).lastError;
 
-export function* reportError(action: any) {
-  const { error } = action
-
-  // eslint-disable-next-line no-console
-  console.error(error)
-  yield put(addLastError(error))
-}
-
-function* watchFailures() {
-  yield takeEvery(errorMatcher, reportError)
-}
-
-export function* errorsSaga() {
-  yield all([
-    watchFailures(),
-  ])
-}

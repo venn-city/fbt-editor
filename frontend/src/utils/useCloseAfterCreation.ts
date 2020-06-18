@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const useCloseAfterCreation = (onOk: any, loadingSelector: any) => {
-  const isLoading = useSelector(loadingSelector)
+  const isLoading = useSelector(loadingSelector);
 
-  const [closeAfterCreation, setCloseAfterCreation] = useState(false)
+  const [closeAfterCreation, setCloseAfterCreation] = useState(false);
 
   useEffect(() => {
     if (closeAfterCreation && !isLoading) {
-      setCloseAfterCreation(false)
+      setCloseAfterCreation(false);
       if (onOk) {
-        onOk()
+        onOk();
       }
     }
-  }, [closeAfterCreation, isLoading])
+  }, [closeAfterCreation, isLoading, onOk]);
 
   return () => {
-    setCloseAfterCreation(true)
-  }
-}
+    setCloseAfterCreation(true);
+  };
+};
 
-export default useCloseAfterCreation
+export default useCloseAfterCreation;

@@ -1,83 +1,83 @@
-import React, { useEffect, useState } from 'react'
-import { Grid, makeStyles, TextField } from '@material-ui/core'
-import { useDispatch } from 'react-redux'
-import { useDebounce } from 'use-debounce'
-
-import { updateFileContentField } from '../../store/duck/fileContent'
+import { Grid, makeStyles, TextField } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useDebounce } from 'use-debounce';
+import { updateFileContentField } from '../../store/duck/fileContent';
+import { ProjectFileItem } from '../../store/entities';
 
 const useStyles = makeStyles(theme => ({
   rowContainer: {
     marginTop: theme.spacing(4),
   },
-}), { name: 'FileContentRow' })
+}), { name: 'FileContentRow' });
 
-const FileContentRow = ({ id, source, target, description }: any) => {
-  const classes = useStyles()
-  const dispatch = useDispatch()
-  const [sourceRow, setSourceRow] = useState(source)
-  const [targetRow, setTargetRow] = useState(target)
-  const [descriptionRow, setDescriptionRow] = useState(description)
+interface FileContentRowProps {
+  projectFileItem: ProjectFileItem;
+  targetLanguage: string;
+  sourceLanguage: string;
+}
 
-  const [debouncedSourceRow] = useDebounce(sourceRow, 1000)
-  const [debouncedTargetRow] = useDebounce(targetRow, 1000)
-  const [debouncedDescriptionRow] = useDebounce(descriptionRow, 1000)
+const FileContentRow = ({ projectFileItem, targetLanguage, sourceLanguage }: FileContentRowProps) => {
+  const classes = useStyles();
+  const dispatch = useDispatch();
+  const [sourceRow, setSourceRow] = useState(projectFileItem.source);
+  const [targetRow, setTargetRow] = useState(projectFileItem.target);
+  const [descriptionRow, setDescriptionRow] = useState(projectFileItem.description);
+
+  const [debouncedSourceRow] = useDebounce(sourceRow, 1000);
+  const [debouncedTargetRow] = useDebounce(targetRow, 1000);
+  const [debouncedDescriptionRow] = useDebounce(descriptionRow, 1000);
 
   useEffect(() => {
-    setTargetRow(target)
-  }, [target])
+    setTargetRow(projectFileItem.target);
+  }, [projectFileItem.target]);
 
   useEffect(() => {
-    if (debouncedSourceRow !== source) {
-      dispatch(updateFileContentField({ id, value: debouncedSourceRow, field: 'source' }))
+    if (debouncedTargetRow !== projectFileItem.target) {
+      dispatch(updateFileContentField({ id : projectFileItem.id, value: debouncedTargetRow }));
     }
-    if (debouncedTargetRow !== target) {
-      dispatch(updateFileContentField({ id, value: debouncedTargetRow, field: 'target' }))
-    }
-    if (debouncedDescriptionRow !== description) {
-      dispatch(updateFileContentField({ id, value: debouncedDescriptionRow, field: 'description' }))
-    }
-  }, [debouncedSourceRow, debouncedTargetRow, debouncedDescriptionRow])
+  }, [debouncedSourceRow, debouncedTargetRow, debouncedDescriptionRow, dispatch, projectFileItem]);
 
   return (
-    <Grid key={id} container item spacing={3} justify="center" className={classes.rowContainer}>
+    <Grid container item className={classes.rowContainer} justify="center" key={projectFileItem.id} spacing={3}>
       <Grid container item md>
         <TextField
-          multiline
-          label="English"
           fullWidth
-          value={sourceRow}
-          onChange={({ target: { value } }: any) => setSourceRow(value)}
-          rows={3}
+          multiline
           InputProps={{
             readOnly: true,
           }}
+          label={sourceLanguage}
+          rows={3}
+          value={sourceRow}
           variant="outlined"
+          onChange={({ target: { value } }: any) => setSourceRow(value)}
         />
       </Grid>
       <Grid container item md>
         <TextField
-          multiline
           fullWidth
-          value={targetRow}
+          multiline
+          label={targetLanguage}
           rows={3}
-          label="English"
-          onChange={({ target: { value } }: any) => setTargetRow(value)}
+          value={targetRow}
           variant="outlined"
+          onChange={({ target: { value } }: any) => setTargetRow(value)}
         />
       </Grid>
       <Grid container item md={3}>
         <TextField
-          multiline
           fullWidth
-          value={descriptionRow}
-          onChange={({ target: { value } }: any) => setDescriptionRow(value)}
-          rows={3}
+          multiline
           label="Description"
+          rows={3}
+          value={descriptionRow}
           variant="outlined"
+          onChange={({ target: { value } }: any) => setDescriptionRow(value)}
         />
       </Grid>
     </Grid>
-  )
-}
+  );
+};
 
-export default FileContentRow
+export default FileContentRow;

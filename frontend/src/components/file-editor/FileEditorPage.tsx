@@ -1,45 +1,53 @@
-import React, { useEffect } from 'react'
-import { Grid } from '@material-ui/core'
-import { useDispatch, useSelector } from 'react-redux'
-import { useHistory, useRouteMatch } from 'react-router-dom'
-
-import LeftPanel from '../common/LeftPanel'
-import FileEditor from './FileEditor'
-import { fetchRecentFilesList, getRecentFilesList, reverseRecentFilesList } from '../../store/duck/recentFiles'
+import { Grid } from '@material-ui/core';
+import { parse } from 'query-string';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, useRouteMatch } from 'react-router-dom';
+import { fetchProjectItemsList, getFilesList, reverseProjectItemsList } from '../../store/duck/projectItems';
+import { Item, ProjectItem } from '../../store/entities';
+import { getParentFolderPath } from '../../utils/pathNavigation';
+import LeftPanel from '../common/LeftPanel';
+import FileEditor from './FileEditor';
 
 const FileEditorPage = () => {
-  const dispatch = useDispatch()
-  const { push } = useHistory()
-  const { params: { projectId } } = useRouteMatch()
+  const dispatch = useDispatch();
+  const { location: { search }, push } = useHistory();
+  const { params: { projectId } } = useRouteMatch();
+  const { fileId = '' } = parse(search);
+  const folderPath = getParentFolderPath(fileId as string);
+  const files: ProjectItem[] = useSelector(getFilesList);
 
-  const files = useSelector(getRecentFilesList)
+  const onFileClick = (item: Item) => {
+    if (item.readonly) {
+      return;
+    }
+    push({
+      search:`?fileId=${item.id}`,
+      pathname: `/project/${projectId}/file`,
+    });
+  };
 
-  const onEntityClick = (search: string, method: any, additionalPath = '') => {
-    method({
-      search,
-      pathname: `/project/${projectId}${additionalPath}`,
-    })
-  }
-  const onFileClick = (fileId: string) => onEntityClick(`?fileId=${fileId}`, push, '/file')
+  const sortProjectItems = ():void => {
+    dispatch(reverseProjectItemsList());
+  };
 
   useEffect(() => {
-    if (!files.length) {
-      dispatch(fetchRecentFilesList())
+    if (projectId && folderPath) {
+      dispatch(fetchProjectItemsList(projectId, `${folderPath}/`));
     }
-  }, [dispatch, files])
-
+  }, [dispatch, folderPath]);
 
   return (
     <Grid container>
       <LeftPanel
+        items={files}
         searchLabel="Files"
-        files={files}
-        onSortClick={() => dispatch(reverseRecentFilesList())}
         onItemClick={onFileClick}
+        onSortClick={sortProjectItems}
       />
       <FileEditor />
     </Grid>
-  )
-}
+  );
+};
 
-export default FileEditorPage
+export default FileEditorPage;

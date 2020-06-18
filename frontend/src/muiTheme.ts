@@ -1,9 +1,9 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles';
 
-const PRIMARY_TEXT_COLOR = 'rgba(0, 0, 0, 0.87)'
-const SECONDARY_TEXT_COLOR = '#3C3838'
-const DIVIDER_COLOR = 'rgba(0, 0, 0, 0.6)'
-const ERROR_COLOR = '#D7574A'
+const PRIMARY_TEXT_COLOR = 'rgba(0, 0, 0, 0.87)';
+const SECONDARY_TEXT_COLOR = '#3C3838';
+const DIVIDER_COLOR = 'rgba(0, 0, 0, 0.6)';
+const ERROR_COLOR = '#D7574A';
 
 const rawTheme: any = {
   typography: {
@@ -205,9 +205,10 @@ const rawTheme: any = {
       },
     },
   },
-}
+};
 
-const theme = createMuiTheme(rawTheme)
+const theme = createMuiTheme(rawTheme);
 
-export default theme
-export { rawTheme }
+export default theme;
+export { rawTheme };
+

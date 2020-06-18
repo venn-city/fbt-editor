@@ -1,12 +1,6 @@
 {
   "extends": "tslint:recommended",
   "rules": {
-    "no-relative-imports-in-tests": {
-        "options": true,
-        "severity": "error"
-    },
-    "test-case-naming": true,
-    "test-suite-naming": true,
     "ban": [
         true,
         [
@@ -37,7 +31,6 @@
         true,
         "ignore-static"
     ],
-    "no-unused-variable": true,
     "use-default-type-parameter": true,
     "deprecation": true,
     "no-boolean-literal-compare": true,
@@ -104,10 +97,6 @@
         true,
         1
     ],
-    "max-file-line-count-nddp": [
-        true,
-        250
-    ],
     "no-duplicate-imports": false,
     "arrow-return-shorthand": true,
     "no-angle-bracket-type-assertion": false,
@@ -130,8 +119,6 @@
     ],
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
-    "no-unused-variable": true,
-    "no-use-before-declare": true,
     "one-line": [
         true,
         "check-open-brace",

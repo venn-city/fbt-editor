@@ -1,6 +1,6 @@
 export default class TranslationSourceItem {
     constructor(
-        public hashToText: { [Key: string] : string; },
+        public hashToText: { [Key: string]: string; },
         public filepath: string,
         public line_beg: number,
         public col_beg: number,
@@ -11,6 +11,6 @@ export default class TranslationSourceItem {
         public project: string,
         public jsfbt: string
     ) {
-        
+
     }
 }
