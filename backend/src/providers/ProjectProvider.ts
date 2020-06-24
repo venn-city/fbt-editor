@@ -1,6 +1,6 @@
-import projectsCache from 'src/cache/ProjectsCache';
 import ProjectConfiguration from '@entities/ProjectConfiguration';
 import _ from 'lodash';
+import projectsCache from 'src/cache/ProjectsCache';
 
 export default class ProjectProvider {
 
@@ -8,16 +8,22 @@ export default class ProjectProvider {
         return projectsCache.getProjectsConfiguration();
     }
 
-    public getProject(projectName: string): ProjectConfiguration | null {
-        var projects = this.getAllProjects();
-        var filterdProjects: ProjectConfiguration[] = _.filter(projects, (projectConfiguration: ProjectConfiguration) => projectConfiguration.projectName === projectName)
+    public getProject(projectId: string): ProjectConfiguration | null {
+        const projects = this.getAllProjects();
+        const filterdProjects: ProjectConfiguration[] = _.filter(
+            projects,
+            (projectConfiguration: ProjectConfiguration) => projectConfiguration.projectName === projectId);
         if(_.some(filterdProjects)) {
             return filterdProjects[0];
         }
         return null;
     }
 
-    public getSourceFileName(projectName: string): string {
-        return this.getProject(projectName)!.sourceFileName;
-    } 
+    public getSourceFileName(projectId: string): string {
+        return this.getProject(projectId)!.sourceFileName;
+    }
+
+    public getBucketName(projectId: string): string {
+        return this.getProject(projectId)!.bucketName;
+    }
 }

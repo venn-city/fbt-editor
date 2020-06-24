@@ -7,12 +7,16 @@
 # dependencies
 /node_modules
 /.vs
+/**/*projects.json
 
 # testing
 /coverage
 
 # production
 /build
+
+# lint
+.eslintcache
 
 # misc
 .DS_Store

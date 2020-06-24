@@ -1,17 +1,14 @@
+import logger from '@shared/Logger';
 import cookieParser from 'cookie-parser';
+import express, { NextFunction, Request, Response } from 'express';
+import 'express-async-errors';
+import fileUpload from 'express-fileupload';
+import helmet from 'helmet';
+import { BAD_REQUEST } from 'http-status-codes';
 import morgan from 'morgan';
 import path from 'path';
-import helmet from 'helmet';
-
-import express, { Request, Response, NextFunction } from 'express';
-import { BAD_REQUEST } from 'http-status-codes';
-import 'express-async-errors';
-
-import BaseRouter from './routes';
-import logger from '@shared/Logger';
 import projectsCache from 'src/cache/ProjectsCache';
-import fileUpload from 'express-fileupload';
-
+import BaseRouter from './routes';
 
 // Init express
 const app = express();

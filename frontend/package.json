@@ -6,10 +6,13 @@
   "dependencies": {
     "@material-ui/core": "^4.10.1",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.55",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/deep-freeze": "^0.1.2",
     "@types/jest": "^24.0.0",
+    "@types/langmap": "0.0.0",
     "@types/node": "^12.0.0",
     "@types/ramda": "^0.27.6",
     "@types/react": "^16.9.0",
@@ -18,6 +21,9 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/uuid": "^8.0.0",
     "axios": "^0.19.2",
+    "deep-freeze": "0.0.1",
+    "langmap": "0.0.16",
+    "make-error": "^1.3.6",
     "prop-types": "^15.7.2",
     "query-string": "^6.12.1",
     "ramda": "^0.27.0",
@@ -36,7 +42,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src --color --format table --ext ts,tsx --cache",
+    "lint:fix": "npm run lint -- --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,5 +60,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^23.13.2",
+    "eslint-plugin-linting-lightning": "0.0.7",
+    "eslint-plugin-ramda": "^2.5.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4"
   }
 }

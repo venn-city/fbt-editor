@@ -1,17 +1,14 @@
-import { all } from 'redux-saga/effects'
-
-import { errorsSaga as errors } from '../duck/errors'
-import { projectsSaga as projects } from '../duck/projects'
-import { foldersSaga as folders } from '../duck/folders'
-import { recentFilesSaga as recentFiles } from '../duck/recentFiles'
-import { fileContentSaga as fileContent } from '../duck/fileContent'
+import { all } from 'redux-saga/effects';
+import { fileContentSaga as fileContent } from '../duck/fileContent';
+import { projectItemsSaga as projectItems } from '../duck/projectItems';
+import { projectsSaga as projects } from '../duck/projects';
+import { recentFilesSaga as recentFiles } from '../duck/recentFiles';
 
 export default function* () {
   yield all([
-    errors(),
-    folders(),
+    projectItems(),
     projects(),
     recentFiles(),
     fileContent(),
-  ])
+  ]);
 }

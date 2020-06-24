@@ -1,6 +1,7 @@
-import { getAPIPath, request } from './core'
+import { Project } from '../store/entities';
+import { getAPIPath, request } from './core';
 
-export const fetchProjectsList = () => request(
+export const fetchProjectsList = ():Promise<Project[]> => request<Project[]>(
   getAPIPath(`projects`),
   { method: 'GET', params: {} },
-)
+);

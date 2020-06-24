@@ -1,4 +1,5 @@
-export * from './projects'
-export * from './folders'
-export * from './file-content'
-export * from './recentFiles'
+export * from './fileContent';
+export * from './projectItems';
+export * from './projects';
+export * from './recentFiles';
+

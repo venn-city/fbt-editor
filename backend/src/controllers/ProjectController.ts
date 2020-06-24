@@ -1,27 +1,26 @@
-import { Request, Response } from "express";
-import ProjectConfiguration from '@entities/ProjectConfiguration';
 import { Project } from '@entities/Project';
+import ProjectConfiguration from '@entities/ProjectConfiguration';
+import { Request, Response } from "express";
 import _ from 'lodash';
 import ProjectProvider from 'src/providers/ProjectProvider';
 import ResponseProvider from 'src/providers/ResponseProvider';
 
-
 class ProjectController {
     private readonly projectProvider: ProjectProvider = new ProjectProvider();
-    private readonly responseProvider: ResponseProvider = new ResponseProvider(); 
+    private readonly responseProvider: ResponseProvider = new ResponseProvider();
 
     constructor() {
         this.getAll = this.getAll.bind(this);
     }
 
     public async getAll(req: Request, res: Response)  {
-        var projectsConfiguration: ProjectConfiguration[] = this.projectProvider.getAllProjects();
-        var projects: Project[] = _.map(
+        const projectsConfiguration: ProjectConfiguration[] = this.projectProvider.getAllProjects();
+        const projects: Project[] = _.map(
             projectsConfiguration,
                 (projectConfiguration: ProjectConfiguration) =>
-                    new Project(projectConfiguration.projectName, `https://${projectConfiguration.bucketName}.s3.amazonaws.com/`));
+                    new Project(projectConfiguration.projectName, projectConfiguration.projectName, `https://${projectConfiguration.bucketName}.s3.amazonaws.com/`));
         return this.responseProvider.createSuccessfullResponse(res, projects);
-    };
+    }
 }
 
 export default new ProjectController();

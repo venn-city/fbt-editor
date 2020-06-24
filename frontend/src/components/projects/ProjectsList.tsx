@@ -1,10 +1,13 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { Grid, makeStyles, Typography, } from '@material-ui/core'
-import Divider from '@material-ui/core/Divider'
-import SortIcon from '@material-ui/icons/Sort'
-
-import ListItem from './ListItem'
+import { Grid, makeStyles, Typography } from '@material-ui/core';
+import Divider from '@material-ui/core/Divider';
+import SortIcon from '@material-ui/icons/Sort';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { reverseProjectsList } from '../../store/duck/projects';
+import { Project } from '../../store/entities';
+import { getProjectPath } from '../../utils/pathNavigation';
+import ListItem from './ListItem';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -34,51 +37,60 @@ const useStyles = makeStyles(theme => ({
   },
   listHeader: {
     marginLeft: 16,
-  }
-}), { name: 'ProjectsList' })
+  },
+}), { name: 'ProjectsList' });
 
-const ProjectsList = ({ projects }: any) => {
-  const classes: any = useStyles()
-  const history = useHistory()
+export interface ProjectsProps {
+  projects: Project[];
+}
 
-  const onProjectClick = (name: string) => {
-    history.push({ pathname: `/project/${name}` })
-  }
+const ProjectsList = ({ projects }: ProjectsProps) => {
+  const classes: any = useStyles();
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const onProjectClick = (projectId: string) => {
+    history.push({ pathname: getProjectPath(projectId) });
+  };
+
+  const sortProjects = ():void => {
+    dispatch(reverseProjectsList());
+  };
 
   return (
     <Grid
-      md
       container
       item
+      md
+      className={classes.root}
       direction="column"
       justify="flex-start"
-      className={classes.root}
     >
       <Grid container item className={classes.headerContainer}>
-        <Typography variant='h1'>Projects</Typography>
+        <Typography variant="h1">Projects</Typography>
       </Grid>
       <Grid container item className={classes.projectList}>
         <Grid container className={classes.listHeader} justify="space-between">
-          <Grid container alignItems="center" item md={2}>
+          <Grid container item alignItems="center" md={2}>
             <Typography variant="h3">Name</Typography>
-            <SortIcon className={classes.sortIcon} />
+            <SortIcon className={classes.sortIcon} onClick={sortProjects} />
           </Grid>
-          <Grid container alignItems="center" item md={4}>
+          <Grid container item alignItems="center" md={4}>
             <Typography variant="h3">Description</Typography>
           </Grid>
-          <Grid container alignItems="center" item md={2}>
+          <Grid container item alignItems="center" md={2}>
             <Typography variant="h3">Action</Typography>
           </Grid>
         </Grid>
         <Grid container className={classes.dividerContainer}>
           <Divider className={classes.divider} />
         </Grid>
-        {projects.map((project: any) =>
-          <ListItem key={project.name} {...project} onItemClick={onProjectClick} />
+        {projects.map((project: Project) =>
+          <ListItem key={project.name} {...project} onItemClick={onProjectClick} />,
         )}
       </Grid>
     </Grid>
-  )
-}
+  );
+};
 
-export default ProjectsList
+export default ProjectsList;

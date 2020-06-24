@@ -1,10 +1,10 @@
 {
   "projects": [
     {
-      "projectName": "translation-dudyk",
-      "bucketName": "translation-dudyk",
-      "accessKeyId": "AKIAJP7T6BUP64SIVABA",
-      "secretAccessKey": "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",
+      "projectName": "projectName",
+      "bucketName": "bucketName",
+      "accessKeyId": "",
+      "secretAccessKey": "",
       "region": "eu-central-1",
       "sourceFileName": "translation_input.json"
     }

@@ -1,27 +1,32 @@
 import ProjectFileContent from '@entities/ProjectFileContent';
-import TranslationSourceFileProvider from './TranslationFilesProvider';
-import TranslationSourceFile from '@entities/TranslationSourceFile';
 import ProjectFileItem from '@entities/ProjectFileItem';
-import _ from 'lodash';
+import TranslationSourceFile from '@entities/TranslationSourceFile';
 import TranslationSourceItem from '@entities/TranslationSourceItem';
 import TranslationTargetFile from '@entities/TranslationTargetFile';
 import TranslationTargetItem from '@entities/TranslationTargetItem';
 import TranslationTargetItemTranslation from '@entities/TranslationTargetItemTranslation';
+import _ from 'lodash';
+import path from 'path';
+import TranslationSourceFileProvider from './TranslationFilesProvider';
 
 export default class TranslationFileContentProvider {
-    private translationSourceFileProvider: TranslationSourceFileProvider = new TranslationSourceFileProvider();
+    private readonly translationSourceFileProvider: TranslationSourceFileProvider = new TranslationSourceFileProvider();
 
     public async getFileContent(projectFileContent: ProjectFileContent): Promise<TranslationTargetFile> {
-        var translationSourceFile: TranslationSourceFile = await this.translationSourceFileProvider.getTranslationSourceFile(
-            projectFileContent.projectName,
+        if (!projectFileContent.targetLanguage) {
+            throw new Error(`Target language has not been specified in file ${path.basename(projectFileContent.fileId)}`);
+        }
+        const translationSourceFile: TranslationSourceFile = await this.translationSourceFileProvider.getTranslationSourceFile(
+            projectFileContent.projectId,
             projectFileContent.fileId);
-        var translations: { [Key: string] : TranslationTargetItem; } = {}; 
+        const translations: { [Key: string]: TranslationTargetItem; } = {};
 
-        _.forEach(translationSourceFile.phrases, (translationItem: TranslationSourceItem):void => {
-        for (var key in translationItem.hashToText) {
-            var value =  projectFileContent.projectFileItems.filter((item: ProjectFileItem) => item.id === key)[0];
-            var translation: string =  value?.target || "";
-            var translationTargetItem = new TranslationTargetItem([],[],[new TranslationTargetItemTranslation(translation, {})])
+        _.forEach(translationSourceFile.phrases, (translationItem: TranslationSourceItem): void => {
+        // tslint:disable-next-line: forin
+        for (const key in translationItem.hashToText) {
+            const value =  projectFileContent.projectFileItems.filter((item: ProjectFileItem) => item.id === key)[0];
+            const translation: string =  value?.target || "";
+            const translationTargetItem = new TranslationTargetItem([],[],[new TranslationTargetItemTranslation(translation, {})]);
             translations[key] = translationTargetItem;
           }
         });

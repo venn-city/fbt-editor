@@ -1,11 +1,10 @@
-import ProjectRepository from 'src/repositories/ProjectRepository';
-    import cache from 'memory-cache';
 import ProjectConfiguration from '@entities/ProjectConfiguration';
+import cache from 'memory-cache';
+import ProjectRepository from 'src/repositories/ProjectRepository';
 
-class ProjectsCache
-{
+class ProjectsCache {
     private readonly projectsConfiguration: string = "projectsConfiguration";
-    private projectRepository: ProjectRepository = new ProjectRepository();
+    private readonly projectRepository: ProjectRepository = new ProjectRepository();
 
     public init() {
         cache.put(this.projectsConfiguration, this.projectRepository.getProjectsConfiguration());

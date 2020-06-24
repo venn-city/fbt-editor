@@ -1,15 +1,12 @@
-import React, { useState } from 'react'
 import {
-  makeStyles,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  TextField,
-  DialogActions,
   Button,
-  Input,
-  DialogContentText,
-} from '@material-ui/core'
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  makeStyles,
+} from '@material-ui/core';
+import React, { useState } from 'react';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,71 +16,58 @@ const useStyles = makeStyles(theme => ({
   saveButton: {},
   targetLanguage: {
     marginTop: theme.spacing(2),
-  }
-}), { name: 'DialogModal' })
+  },
+}), { name: 'CreataProjectItemModal' });
 
-const UploadFileModal = ({ itemType, open, onClose, onSave }: any) => {
-  const classes = useStyles()
-  const [file, setFile] = useState('')
+export interface UploadFileModalProps {
+  open: boolean;
+  onClose: () => void;
+  onSave: (currentFile: File | undefined) => void;
+}
 
-  const onFormSubmit = (e:any) : void => {
-    e.preventDefault();
-    // post data
-  }
+const UploadFileModal = ({ open, onClose, onSave }: UploadFileModalProps) => {
+  const classes = useStyles();
+  const [currentFile, setCurrentFile] = useState<File>();
 
-  const onChange = (e:any) => {
-  }
-
-  const fileUpload = (file: any) =>  {
-    const formData = new FormData();
-    formData.append('file', file)
-    const config = {
-        headers: {
-            'content-type': 'multipart/form-data'
-        }
+  const selectFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target!.files) {
+      setCurrentFile(event.target!.files[0]);
     }
-  }
-  
+  };
+
   return (
     <Dialog
       classes={{ paper: classes.root }}
       open={open}
       onClose={onClose}
     >
-      <form onSubmit={onFormSubmit}>
-      <DialogTitle>Upload source file</DialogTitle>
-      <DialogContent>
-        <Input
-          value={file}
-          onChange={({ target: { value } }) => setFile(value)}
-          autoFocus
-          type='file'
-        />
-      </DialogContent>
-      <DialogActions>
-        <Button
-          className={classes.button}
-          onClick={() => {
-            onClose()
-          }}
-          variant="outlined"
-        >
-          Cancel
-        </Button>
-        <Button
-          className={classes.saveButton}
-          color="inherit"
-          onClick={(e) => {
-            onFormSubmit(e)
-          }}
-          variant="outlined"
-        >
-          Save
-        </Button>
-      </DialogActions>
+      <form>
+        <DialogTitle>Upload source file</DialogTitle>
+        <DialogContent>
+          <input id="file" type="file" onChange={selectFile} />
+        </DialogContent>
+        <DialogActions>
+          <Button
+            className={classes.button}
+            variant="outlined"
+            onClick={() => {
+              onClose();
+            }}
+          >
+            Cancel
+          </Button>
+          <Button
+            className={classes.saveButton}
+            color="inherit"
+            variant="outlined"
+            onClick={() => onSave(currentFile)}
+          >
+            Upload
+          </Button>
+        </DialogActions>
       </form>
     </Dialog>
-  )
-}
+  );
+};
 
-export default UploadFileModal
+export default UploadFileModal;

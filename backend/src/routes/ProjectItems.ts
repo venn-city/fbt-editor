@@ -1,34 +1,38 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 import ProjectItemController from 'src/controllers/ProjectItemController';
 
 // Init shared
 const router = Router();
 
 /******************************************************************************
- *                      Get file content - "GET /api/project-items/:projectName?folderId=folderId"
+ *                      Get file content - "GET /api/project-items/:projectId?folderId=folderId"
  ******************************************************************************/
 
-router.get("/:projectName", ProjectItemController.getAll);
+// tslint:disable-next-line: no-unbound-method
+router.get("/:projectId", ProjectItemController.getAll);
 
 /******************************************************************************
  *                      Delete item - "DELETE /api/project-items/"
  *                      Body: DeleteItemRequest
- *                          projectName: string
+ *                          projectId: string
  *                          itemId: string
  ******************************************************************************/
 
+// tslint:disable-next-line: no-unbound-method
 router.delete("/", ProjectItemController.deleteItem);
 
 /******************************************************************************
  *                      Create item - "POST /api/project-items/"
  *                      Body: CreateItemRequest
- *                          projectName: string
+ *                          projectId: string
  *                          parentFolderId: string
  *                          name: string
  ******************************************************************************/
 
+// tslint:disable-next-line: no-unbound-method
 router.post("/",  ProjectItemController.createItem);
 
+// tslint:disable-next-line: no-unbound-method
 router.post("/upload",  ProjectItemController.uploadItem);
 
 /******************************************************************************

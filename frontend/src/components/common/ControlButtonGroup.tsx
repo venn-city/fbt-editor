@@ -1,21 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { is } from 'ramda'
-import { v4 as uuid } from 'uuid'
 import {
+  CircularProgress,
   IconButton,
   makeStyles,
   Tooltip,
-  CircularProgress,
-} from '@material-ui/core'
-
+} from '@material-ui/core';
 import {
   Add,
   Create,
   Delete,
-  KeyboardArrowUp,
-  KeyboardArrowDown,
-} from '@material-ui/icons'
+  KeyboardArrowDown, KeyboardArrowUp, SvgIconComponent,
+} from '@material-ui/icons';
+import { is } from 'ramda';
+import React from 'react';
+import { v4 as uuid } from 'uuid';
 
 const useStyles = makeStyles(theme => ({
   editIcon: {},
@@ -28,18 +25,18 @@ const useStyles = makeStyles(theme => ({
   },
   icon: {
     fontSize: 24,
-  }
-}), { name: 'ControlButtonGroup' })
+  },
+}), { name: 'ControlButtonGroup' });
 
-const ButtonsIconMap: object = {
+const ButtonsIconMap: {[id: string]: SvgIconComponent} = {
   add: Add,
   edit: Create,
   delete: Delete,
   expand: KeyboardArrowUp,
   collapse: KeyboardArrowDown,
-}
+};
 
-interface Props {
+interface ControlButtonGroupProps {
   name: string;
   onClick?: () => void;
   isLoading: boolean;
@@ -53,52 +50,33 @@ const ButtonWithToolTip = (button: any, tooltip: string) => tooltip
       {button}
     </Tooltip>
   )
-  : button
+  : button;
 
 const ControlButtonGroup = ({
   buttons,
   classes: classesProp,
 }: any) => {
-  const classes = useStyles({ classes: classesProp })
-
-  const validButtons = buttons.filter(is(Object))
-
+  const classes = useStyles({ classes: classesProp });
+  const validButtons = buttons.filter(is(Object));
   return validButtons
-    .map(({ name, onClick, isLoading, tooltip, disabled }: Props) => {
-      // @ts-ignore
-      const Icon = ButtonsIconMap[name]
-
+    .map(({ name, onClick, isLoading, tooltip, disabled }: ControlButtonGroupProps) => {
+      const Icon = ButtonsIconMap[name];
       const iconButton = (
-        <>
-          <IconButton
-            aria-label={name}
-            className={classes.iconButton}
-            disabled={disabled || isLoading}
-            onClick={onClick}
-          >
-            {isLoading
-              ? <CircularProgress color="primary" size={24} />
-              : <Icon classes={{ root: classes.icon }} />
-            }
-          </IconButton>
-        </>
-      )
+        <IconButton
+          aria-label={name}
+          className={classes.iconButton}
+          disabled={disabled || isLoading}
+          onClick={onClick}
+        >
+          {isLoading
+            ? <CircularProgress color="primary" size={24} />
+            : <Icon classes={{ root: classes.icon }} />
+          }
+        </IconButton>
+      );
 
-      return ButtonWithToolTip(iconButton, tooltip)
-    })
-}
+      return ButtonWithToolTip(iconButton, tooltip);
+    });
+};
 
-ControlButtonGroup.propTypes = {
-  buttons: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.shape({
-      disabled: PropTypes.bool,
-      isLoading: PropTypes.bool,
-      name: PropTypes.string.isRequired,
-      onClick: PropTypes.func,
-      tooltip: PropTypes.string,
-    }).isRequired,
-  ])),
-}
-
-export default ControlButtonGroup
+export default ControlButtonGroup;

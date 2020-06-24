@@ -1,36 +1,40 @@
-import React, { useEffect } from 'react'
-import { Grid } from '@material-ui/core'
-import { useDispatch, useSelector } from 'react-redux'
-import LeftPanel from '../common/LeftPanel'
-import ProjectsList from './ProjectsList'
-import { fetchProjectsList, getProjectsList } from '../../store/duck/projects'
-import { getRecentFilesList, fetchRecentFilesList, reverseRecentFilesList } from '../../store/duck/recentFiles'
+import { Grid } from '@material-ui/core';
+import React, { Dispatch, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { fetchProjectsList, getProjectsList } from '../../store/duck/projects';
+import { fetchRecentFilesList, getRecentFilesList, reverseRecentFilesList } from '../../store/duck/recentFiles';
+import { Item, RecentFile } from '../../store/entities';
+import { onFileClick } from '../../utils/projectItemPath';
+import LeftPanel from '../common/LeftPanel';
+import ProjectsList from './ProjectsList';
 
 const ProjectsPage = () => {
-  const dispatch = useDispatch()
+  const dispatch: Dispatch<any> = useDispatch();
   const projects = useSelector(getProjectsList);
-  const files = useSelector(getRecentFilesList)
+  const recentFiles: RecentFile[] = useSelector(getRecentFilesList);
+  const { push } = useHistory();
 
   useEffect(() => {
     dispatch(fetchProjectsList());
     dispatch(fetchRecentFilesList());
-  }, [dispatch])
+  }, [dispatch]);
 
-  const onChangeSortFiles = () => {
-    dispatch(reverseRecentFilesList())
-  }
+  const onChangeSortFiles = ():void => {
+    dispatch(reverseRecentFilesList());
+  };
 
   return (
     <Grid container>
       <LeftPanel
-        files={files}
-        onChangeSortFiles={onChangeSortFiles}
-        onItemClick={() => console.log('click')}
+        items={recentFiles}
+        searchLabel="Recent files"
+        onItemClick={(item: Item) => onFileClick(item.projectId, item.id, push)}
+        onSortClick={onChangeSortFiles}
       />
       <ProjectsList projects={projects} />
     </Grid>
-  )
-}
+  );
+};
 
-// @ts-ignore
-export default ProjectsPage
+export default ProjectsPage;

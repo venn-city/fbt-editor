@@ -5,7 +5,6 @@ export default class ProjectConfiguration {
         public accessKeyId: string,
         public secretAccessKey: string,
         public region: string,
-        public sourceFileName: string)
-    {
+        public sourceFileName: string) {
     }
 }

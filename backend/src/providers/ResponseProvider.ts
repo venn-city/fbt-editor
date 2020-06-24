@@ -1,16 +1,16 @@
 import { Response } from "express";
-import { OK, BAD_REQUEST } from 'http-status-codes';
+import { BAD_REQUEST, OK } from 'http-status-codes';
 
 export default class ResponseProvider {
 
     public createBadRequestResponse(res: Response, message: string) {
         return res.status(BAD_REQUEST).json({
-            statusCode: BAD_REQUEST, 
-            message: message
+            statusCode: BAD_REQUEST,
+            message
         });
     }
 
-    public createSuccessfullResponse(res: Response, result: any) {
+    public createSuccessfullResponse<TData>(res: Response, result: TData) {
         return res.status(OK).json(result);
     }
 }
