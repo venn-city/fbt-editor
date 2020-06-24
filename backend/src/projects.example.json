@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {
+      "projectName": "##",
+      "bucketName": "###",
+      "accessKeyId": "####",
+      "secretAccessKey": "###",
+      "region": "eu-central-1",
+      "sourceFileName": "source_strings_bundle.json"
+    }
+  ]
+}

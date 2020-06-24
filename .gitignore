@@ -14,6 +14,8 @@
 
 # production
 /build
+/backend/src/
+
 
 # lint
 .eslintcache

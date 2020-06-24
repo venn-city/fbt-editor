@@ -5,7 +5,7 @@ FBT-editor is editor for fbt translations which are located in S3 bucket
 * [npm](https://www.npmjs.com/)
 
 ## Using fbt-editor
-1. Setup projects settings in ../backend/projects.json
+1. Setup projects settings in ../backend/projects.json (you can copy the structure from projects.example.json)
 2. Install packages: 
 	npm install
 	npm run-script install-frontend

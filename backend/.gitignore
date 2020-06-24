@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 projects.json*
-
+backend/src/projects.json
 # testing
 /coverage
 
