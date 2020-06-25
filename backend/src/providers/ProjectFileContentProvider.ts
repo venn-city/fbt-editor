@@ -4,14 +4,14 @@ import TranslationSourceFile from '@entities/TranslationSourceFile';
 import TranslationSourceItem from '@entities/TranslationSourceItem';
 import TranslationTargetFile from '@entities/TranslationTargetFile';
 import _ from 'lodash';
-import TranslationSourceFileProvider from './TranslationFilesProvider';
+import TranslationFilesProvider from './TranslationFilesProvider';
 
 export default class ProjectFileContentProvider {
-    private readonly translationSourceFileProvider: TranslationSourceFileProvider = new TranslationSourceFileProvider();
+    private readonly translationFilesProvider: TranslationFilesProvider = new TranslationFilesProvider();
 
     public async getProjectFileContent(projectId: string, projectFileId: string): Promise<ProjectFileContent> {
-        const translationSourceFile: TranslationSourceFile = await this.translationSourceFileProvider.getTranslationSourceFile(projectId, projectFileId);
-        const translationTargetFile: TranslationTargetFile = await this.translationSourceFileProvider.getTranslationTargetFile(projectId, projectFileId);
+        const translationSourceFile: TranslationSourceFile = await this.translationFilesProvider.getTranslationSourceFile(projectId, projectFileId);
+        const translationTargetFile: TranslationTargetFile = await this.translationFilesProvider.getTranslationTargetFile(projectId, projectFileId);
         const items: ProjectFileItem[] = _.compact(_.map(translationSourceFile.phrases, (translationItem: TranslationSourceItem): ProjectFileItem|undefined => {
         // tslint:disable-next-line: forin
         for (const key in translationItem.hashToText) {

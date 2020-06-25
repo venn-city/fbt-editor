@@ -1,4 +1,7 @@
 import CreateItemRequest from '@entities/CreateItemRequest';
+import ProjectContent from '@entities/ProjectContent';
+import ProjectFolder from '@entities/ProjectFolder';
+import ProjectFile from '@entities/RecentFile';
 import TranslationSourceFile from '@entities/TranslationSourceFile';
 import TranslationTargetFile from '@entities/TranslationTargetFile';
 import { UploadedFile } from 'express-fileupload';
@@ -10,6 +13,26 @@ export default class ProjectItemProvider {
     private readonly s3BucketRepository: S3BucketRepository = new S3BucketRepository();
     private readonly bucketRepository: S3BucketRepository = new S3BucketRepository();
     private readonly projectProvider: ProjectProvider = new ProjectProvider();
+
+    public async getAll(projectId: string, folderId: string): Promise<ProjectContent> {
+        const data: AWS.S3.Types.ListObjectsV2Output = await this.bucketRepository.getBucketObjects(projectId, folderId);
+        const sourceFileName = this.projectProvider.getSourceFileName(projectId);
+        let projectFiles: ProjectFile[] = [];
+        if (data.Contents) {
+            projectFiles = data.Contents
+            .filter(file=> path.extname(file.Key!) === ".json")
+            .map((file)=> {
+            const key: string = file.Key!;
+            const fileName = path.basename(key);
+            return new ProjectFile(key, fileName, fileName === sourceFileName);
+            });
+        }
+        let projectFolders: ProjectFolder[] = [];
+        if (data.CommonPrefixes) {
+            projectFolders = data.CommonPrefixes?.map((folder)=> new ProjectFolder(folder.Prefix!, path.basename(folder.Prefix!)));
+        }
+        return new ProjectContent(projectId, projectFolders.concat(projectFiles).filter(item => item.id !== folderId));
+    }
 
     public async deleteFile(projectId: string, projectFileId: string): Promise<boolean> {
         const result = await this.s3BucketRepository.deleteObject(projectId, projectFileId);

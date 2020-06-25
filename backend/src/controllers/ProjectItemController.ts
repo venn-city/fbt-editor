@@ -5,6 +5,7 @@ import { Request, Response } from "express";
 import { UploadedFile } from 'express-fileupload';
 import { ParamsDictionary } from 'express-serve-static-core';
 import ProjectItemProvider from 'src/providers/ProjectItemProvider';
+import ProjectProvider from 'src/providers/ProjectProvider';
 import ResponseProvider from 'src/providers/ResponseProvider';
 import S3BucketRepository from "src/repositories/S3BucketRepository";
 
@@ -12,6 +13,7 @@ class ProjectItemController {
     private readonly bucketRepository: S3BucketRepository = new S3BucketRepository();
     private readonly projectItemProvider: ProjectItemProvider = new ProjectItemProvider();
     private readonly responseProvider: ResponseProvider = new ResponseProvider();
+    private readonly projectProvider: ProjectProvider = new ProjectProvider();
 
     constructor() {
         this.getAll = this.getAll.bind(this);
@@ -24,7 +26,7 @@ class ProjectItemController {
         const { projectId } = req.params;
         const { folderId } = req.query as ParamsDictionary;
         if (projectId) {
-            const projectContent: ProjectContent = await this.bucketRepository.getBucketObjects(projectId, folderId);
+            const projectContent: ProjectContent = await this.projectItemProvider.getAll(projectId, folderId);
             return this.responseProvider.createSuccessfullResponse(res, projectContent);
         }
         return this.responseProvider.createBadRequestResponse(res, 'Invalid projectId or file ID.');

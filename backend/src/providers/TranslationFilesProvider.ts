@@ -17,8 +17,13 @@ export default class TranslationFilesProvider {
         } catch(e) {
             throw new Error(`File ${path.basename(sourceFileName)} does not exist in folder.`);
         }
-        const translationFile: TranslationSourceFile = JSON.parse(fileContent.Body!.toString()) as TranslationSourceFile;
-        if (!translationFile) {
+        let translationFile: TranslationSourceFile;
+        try {
+            translationFile = JSON.parse(fileContent.Body!.toString()) as TranslationSourceFile;
+            if (!translationFile) {
+                throw new Error(`File ${sourceFileName} does not have valid format.`);
+            }
+        } catch(e) {
             throw new Error(`File ${sourceFileName} does not have valid format.`);
         }
         return translationFile;
@@ -50,6 +55,6 @@ export default class TranslationFilesProvider {
             return translationFile;
         }
 
-        return new TranslationTargetFile("default", {});
+        throw new Error(`File ${path.basename(projectFileId)} does not have valid format.`);
     }
 }
