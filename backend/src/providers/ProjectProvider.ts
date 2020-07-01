@@ -8,7 +8,7 @@ export default class ProjectProvider {
         return projectsCache.getProjectsConfiguration();
     }
 
-    public getProject(projectId: string): ProjectConfiguration | null {
+    public getProject(projectId: string): ProjectConfiguration {
         const projects = this.getAllProjects();
         const filterdProjects: ProjectConfiguration[] = _.filter(
             projects,
@@ -16,14 +16,14 @@ export default class ProjectProvider {
         if(_.some(filterdProjects)) {
             return filterdProjects[0];
         }
-        return null;
+        throw new Error(`Project (${projectId}) does not exist!`);
     }
 
     public getSourceFileName(projectId: string): string {
-        return this.getProject(projectId)!.sourceFileName;
+        return this.getProject(projectId).sourceFileName;
     }
 
     public getBucketName(projectId: string): string {
-        return this.getProject(projectId)!.bucketName;
+        return this.getProject(projectId).bucketName;
     }
 }
