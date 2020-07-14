@@ -4,6 +4,7 @@ import * as API from '../../api';
 import { ApiError } from '../../utils/errorTypes';
 import requestAPI from '../sagas/requestAPI';
 import { RecentFile } from './../entities';
+import { addLastError } from './errors';
 
 export const FETCH_RECENT_FILES_LIST = 'recentFiles/FETCH_RECENT_FILES_LIST';
 export const FETCH_RECENT_FILES_LIST_SUCCESS = 'recentFiles/FETCH_RECENT_FILES_LIST_SUCCESS';
@@ -78,6 +79,7 @@ export function* fetchRecentFiles():Generator {
     yield put(fetchRecentFilesListSuccess(recentFiles));
   } catch (error) {
     yield put(fetchRecentFilesListFailure(error));
+    yield put(addLastError(error));
   }
 }
 

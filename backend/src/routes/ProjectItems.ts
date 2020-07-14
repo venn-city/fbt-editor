@@ -1,5 +1,6 @@
 import { Router } from "express";
 import ProjectItemController from 'src/controllers/ProjectItemController';
+import mustAuthenticated from 'src/middlewares/mustAuthenticated';
 
 // Init shared
 const router = Router();
@@ -9,7 +10,7 @@ const router = Router();
  ******************************************************************************/
 
 // tslint:disable-next-line: no-unbound-method
-router.get("/:projectId", ProjectItemController.getAll);
+router.get("/:projectId", mustAuthenticated, ProjectItemController.getAll);
 
 /******************************************************************************
  *                      Delete item - "DELETE /api/project-items/"
@@ -19,7 +20,7 @@ router.get("/:projectId", ProjectItemController.getAll);
  ******************************************************************************/
 
 // tslint:disable-next-line: no-unbound-method
-router.delete("/", ProjectItemController.deleteItem);
+router.delete("/", mustAuthenticated, ProjectItemController.deleteItem);
 
 /******************************************************************************
  *                      Create item - "POST /api/project-items/"
@@ -30,10 +31,10 @@ router.delete("/", ProjectItemController.deleteItem);
  ******************************************************************************/
 
 // tslint:disable-next-line: no-unbound-method
-router.post("/",  ProjectItemController.createItem);
+router.post("/", mustAuthenticated, ProjectItemController.createItem);
 
 // tslint:disable-next-line: no-unbound-method
-router.post("/upload",  ProjectItemController.uploadItem);
+router.post("/upload", mustAuthenticated,  ProjectItemController.uploadItem);
 
 /******************************************************************************
  *                                     Export

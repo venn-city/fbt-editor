@@ -1,6 +1,6 @@
 import ProjectConfiguration from '@entities/ProjectConfiguration';
-import ProjectsCache from 'src/cache/ProjectsCache';
-import ProjectRepository from "src/repositories/ProjectRepository";
+import AppSettingsCache from 'src/cache/AppSettingsCache';
+import AppSettingsRepository from "src/repositories/ProjectRepository";
 
 describe('ProjectsCache', () => {
 
@@ -10,9 +10,9 @@ describe('ProjectsCache', () => {
             new ProjectConfiguration("test", "test", "", "", "", "")
         ];
 
-        spyOn(ProjectRepository.prototype, 'getProjectsConfiguration').and.returnValue(projectConfigurations);
-        ProjectsCache.init();
-        const result = ProjectsCache.getProjectsConfiguration();
+        spyOn(AppSettingsRepository.prototype, 'getProjectsConfiguration').and.returnValue(projectConfigurations);
+        AppSettingsCache.init();
+        const result = AppSettingsCache.getAppSettings();
         expect(result).toEqual(projectConfigurations);
         done();
     });

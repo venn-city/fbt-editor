@@ -4,6 +4,7 @@ import * as API from '../../api';
 import { ApiError } from '../../utils/errorTypes';
 import { Project } from '../entities';
 import requestAPI from '../sagas/requestAPI';
+import { addLastError } from './errors';
 
 export const FETCH_PROJECTS_LIST = 'projects/FETCH_PROJECTS_LIST';
 export const FETCH_PROJECTS_LIST_SUCCESS = 'projects/FETCH_PROJECTS_LIST_SUCCESS';
@@ -76,6 +77,7 @@ export function* fetchProjects():Generator {
     yield put(fetchProjectsListSuccess(projects));
   } catch (error) {
     yield put(fetchProjectsListFailure(error));
+    yield put(addLastError(error));
   }
 }
 

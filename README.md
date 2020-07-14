@@ -22,7 +22,7 @@ The main features are:
 * [npm](https://www.npmjs.com/)
 
 ## Using fbt-editor
-1. Setup projects settings in ../backend/projects.json (you can copy the structure from projects.example.json)
+1. Setup settings in ../backend/appSettings.json (you can copy the structure from appSettings.example.json)
 2. Install packages: 
 	npm install
 	npm run-script install-frontend

@@ -7,12 +7,12 @@ import helmet from 'helmet';
 import { BAD_REQUEST } from 'http-status-codes';
 import morgan from 'morgan';
 import path from 'path';
-import projectsCache from 'src/cache/ProjectsCache';
+import AuthentificationProvider from './providers/AuthentificationProvider';
 import BaseRouter from './routes';
 
+const authentificationProvider = new AuthentificationProvider();
 // Init express
 const app = express();
-projectsCache.init();
 
 /************************************************************************************
  *                              Set basic express settings
@@ -22,7 +22,7 @@ projectsCache.init();
 app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(cookieParser());
+app.use(cookieParser(authentificationProvider.getCookiesSecret()));
 
 // Show routes called in console during development
 if (process.env.NODE_ENV === 'development') {

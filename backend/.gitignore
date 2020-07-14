@@ -4,8 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-projects.json*
-backend/src/projects.json
+/**/*projects.json
+/**/*appSettings.json
+
 # testing
 /coverage
 
