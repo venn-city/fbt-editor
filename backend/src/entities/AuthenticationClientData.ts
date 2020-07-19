@@ -1,4 +1,4 @@
-export class AuthentificationClientData {
+export class AuthenticationClientData {
     public constructor(public clientId: string) {
 
     }

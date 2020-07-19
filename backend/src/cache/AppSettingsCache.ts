@@ -1,5 +1,5 @@
 import AppSettings from '@entities/AppSettings';
-import { AuthentificationConfiguration } from '@entities/AuthentificationConfiguration';
+import { AuthenticationConfiguration } from '@entities/AuthenticationConfiguration';
 import ProjectConfiguration from '@entities/ProjectConfiguration';
 import cache from 'memory-cache';
 import AppSettingsRepository from 'src/repositories/ProjectRepository';
@@ -20,8 +20,8 @@ class AppSettingsCache {
         return this.getAppSettings().projects;
     }
 
-    public getAuthentificationConfiguration(): AuthentificationConfiguration {
-        return this.getAppSettings().authentification;
+    public getAuthenticationConfiguration(): AuthenticationConfiguration {
+        return this.getAppSettings().authentication;
     }
 
     public getUsers(): string[] {

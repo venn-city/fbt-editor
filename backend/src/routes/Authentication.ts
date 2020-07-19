@@ -1,5 +1,5 @@
 import { Router } from "express";
-import AuthentificationsController from '../controllers/AuthentificationsController';
+import AuthenticationsController from '../controllers/AuthenticationController';
 
 // Init shared
 const router = Router();
@@ -9,7 +9,7 @@ const router = Router();
  ******************************************************************************/
 
 // tslint:disable-next-line: no-unbound-method
-router.post("/login", AuthentificationsController.login);
+router.post("/login", AuthenticationsController.login);
 
 
 /******************************************************************************
@@ -17,6 +17,6 @@ router.post("/login", AuthentificationsController.login);
  ******************************************************************************/
 
 // tslint:disable-next-line: no-unbound-method
-router.get("/getClientData", AuthentificationsController.getClientData);
+router.get("/getClientData", AuthenticationsController.getClientData);
 
 export default router;

@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import ErrorSnackbar from './components/ErrorSnackbar';
 import FileEditorPage from './components/file-editor/FileEditorPage';
-import withAuthentification from './components/hocs/withAuthentification';
+import withAuthentication from './components/hocs/withAuthentication';
 import LoginPage from './components/LoginPage';
 import NoPermissionPage from './components/NoPermissionPage';
 import ProjectItemsPage from './components/projectItems/ProjectItemsPage';
@@ -27,7 +27,7 @@ function App() {
           <Switch>
             <Route
               exact
-              component={withAuthentification(<Redirect to="/projects" />)}
+              component={withAuthentication(<Redirect to="/projects" />)}
               path="/"
             />
             <Route
@@ -39,15 +39,15 @@ function App() {
               path="/login"
             />
             <Route
-              component={withAuthentification(ProjectsPage)}
+              component={withAuthentication(ProjectsPage)}
               path="/projects"
             />
             <Route
-              component={withAuthentification(FileEditorPage)}
+              component={withAuthentication(FileEditorPage)}
               path="/project/:projectId/file"
             />
             <Route
-              component={withAuthentification(ProjectItemsPage)}
+              component={withAuthentication(ProjectItemsPage)}
               path="/project/:projectId"
             />
           </Switch>
