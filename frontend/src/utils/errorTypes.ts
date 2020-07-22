@@ -14,8 +14,7 @@ export class ApiError extends BaseError {
     // @ts-ignore
     super(extendedMessage, filename);
     this.status = status;
-    this.message = data.error;
-
+    this.message = data.error || data.message;
     // @NOTE: workaround to preserve class name after bundling
     this.name = 'ApiError';
   }

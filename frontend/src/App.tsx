@@ -3,8 +3,10 @@ import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import ErrorSnackbar from './components/ErrorSnackbar';
 import FileEditorPage from './components/file-editor/FileEditorPage';
-import ProjectItemsPage from './components/projectItems/ProjectItemsPage';
+import withAuthentication from './components/hocs/withAuthentication';
+import LoginPage from './components/LoginPage';
 import NoPermissionPage from './components/NoPermissionPage';
+import ProjectItemsPage from './components/projectItems/ProjectItemsPage';
 import ProjectsPage from './components/projects/ProjectsPage';
 
 const useStyles = makeStyles(theme => ({
@@ -25,23 +27,27 @@ function App() {
           <Switch>
             <Route
               exact
+              component={withAuthentication(<Redirect to="/projects" />)}
               path="/"
-              render={() => <Redirect to="/projects" />}
             />
             <Route
               component={NoPermissionPage}
               path="/403"
             />
             <Route
-              component={ProjectsPage}
+              component={LoginPage}
+              path="/login"
+            />
+            <Route
+              component={withAuthentication(ProjectsPage)}
               path="/projects"
             />
             <Route
-              component={FileEditorPage}
+              component={withAuthentication(FileEditorPage)}
               path="/project/:projectId/file"
             />
             <Route
-              component={ProjectItemsPage}
+              component={withAuthentication(ProjectItemsPage)}
               path="/project/:projectId"
             />
           </Switch>

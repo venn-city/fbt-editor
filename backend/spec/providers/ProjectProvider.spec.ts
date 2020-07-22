@@ -1,5 +1,5 @@
 import ProjectConfiguration from "@entities/ProjectConfiguration";
-import projectsCache from 'src/cache/ProjectsCache';
+import projectsCache from 'src/cache/AppSettingsCache';
 import ProjectProvider from 'src/providers/ProjectProvider';
 
 describe('ProjectProvider', () => {

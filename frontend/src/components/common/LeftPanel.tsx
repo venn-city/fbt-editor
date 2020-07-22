@@ -1,5 +1,5 @@
 import {
-  FilledInput,
+  Avatar, FilledInput,
   FormControl,
   Grid,
   IconButton,
@@ -9,8 +9,12 @@ import {
   Typography,
 } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
-import React from 'react';
-import { Item } from '../../store/entities';
+import React, { useEffect } from 'react';
+import { GoogleLogout } from 'react-google-login';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { fetchAuthClientData, getAuthClientData, getCurrentUser, getIsLoggedIn, logout } from '../../store/duck/auth';
+import { CurrentUser, Item } from '../../store/entities';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -63,6 +67,13 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 26,
     marginBottom: 20,
   },
+  profileContainer: {
+    marginBottom: theme.spacing(1),
+  },
+  profileTitle: {
+    marginTop: theme.spacing(1),
+    paddingLeft: theme.spacing(1),
+  },
 }), { name: 'LeftPanel' });
 
 export interface LeftPanelProps {
@@ -73,7 +84,36 @@ export interface LeftPanelProps {
 }
 
 const LeftPanel = ({ searchLabel = 'Recent files', items = [], onSortClick, onItemClick }: LeftPanelProps) => {
+  const dispatch = useDispatch();
   const classes = useStyles();
+  const { push } = useHistory();
+  const isLoggedIn = useSelector(getIsLoggedIn);
+  const currentUser: CurrentUser|null = useSelector(getCurrentUser);
+  const authClientData = useSelector(getAuthClientData);
+
+  useEffect(() => {
+    if (!authClientData.clientId) {
+      dispatch(fetchAuthClientData());
+    }
+  }, [dispatch, authClientData]);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      push({
+        pathname: `/login`,
+      });
+    }
+  }, [dispatch, currentUser, isLoggedIn]);
+
+  useEffect(() => {
+
+  }, [dispatch, currentUser, isLoggedIn]);
+
+  const onLogoutSuccess = () => {
+    localStorage.removeItem("currentUserToken");
+    dispatch(logout());
+  };
+
   return (
     <Grid
       container
@@ -118,6 +158,24 @@ const LeftPanel = ({ searchLabel = 'Recent files', items = [], onSortClick, onIt
           )}
         </Grid>
       </Grid>
+
+      {isLoggedIn && (
+        <Grid container item className={classes.footerContainer}>
+          <Grid container item className={classes.profileContainer}>
+            <Avatar src={currentUser?.profileImageUrl} />
+            <Typography className={classes.profileTitle}>{currentUser?.name}</Typography>
+          </Grid >
+          <Grid container item className={classes.profileContainer}>
+            { authClientData.clientId && (
+              <GoogleLogout
+                buttonText="Logout"
+                clientId={authClientData.clientId}
+                onLogoutSuccess={onLogoutSuccess}
+              />
+            ) }
+          </Grid >
+        </Grid>
+      )}
     </Grid>
   );
 };

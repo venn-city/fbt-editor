@@ -15,6 +15,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.153",
     "concurrently": "^5.2.0",
-    "lodash": "^4.17.15"
+    "google-auth-library": "^6.0.4",
+    "lodash": "^4.17.19"
   }
 }

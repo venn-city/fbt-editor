@@ -11,7 +11,7 @@ const ErrorSnackbar = () => {
 
   // @ts-ignore
   useEffect(() => {
-    if (message && status > 0) {
+    if (status > 0) {
       setOpen(true);
     }
   }, [message, status]);

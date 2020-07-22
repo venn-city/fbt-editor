@@ -1,11 +1,11 @@
 import ProjectConfiguration from '@entities/ProjectConfiguration';
 import _ from 'lodash';
-import projectsCache from 'src/cache/ProjectsCache';
+import appSettingsCache from 'src/cache/AppSettingsCache';
 
 export default class ProjectProvider {
 
     public getAllProjects(): ProjectConfiguration[] {
-        return projectsCache.getProjectsConfiguration();
+        return appSettingsCache.getProjectsConfiguration();
     }
 
     public getProject(projectId: string): ProjectConfiguration {

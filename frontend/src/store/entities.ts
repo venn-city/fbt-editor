@@ -55,3 +55,19 @@ export interface UpdateFileItemData {
   value: string;
 }
 
+export interface LoginUserRequest {
+  tokenId: string;
+  email: string;
+}
+
+export interface CurrentUser {
+  tokenId: string,
+  email: string
+  profileImageUrl: string;
+  name: string;
+}
+
+export interface AuthClientData {
+  clientId: string;
+}
+

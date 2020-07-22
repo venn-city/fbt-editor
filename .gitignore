@@ -7,15 +7,12 @@
 # dependencies
 /node_modules
 /.vs
-/**/*projects.json
 
 # testing
 /coverage
 
 # production
 /build
-/backend/src/
-
 
 # lint
 .eslintcache
@@ -30,3 +27,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+backend/src/entities/AppSettings.ts
