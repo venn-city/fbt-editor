@@ -28,7 +28,7 @@ import {
   UPDATE_FILE_CONTENT_FIELD,
   UPDATE_FILE_CONTENT_SUCCESS,
 } from "../store/duck/fileContent";
-import { ProjectFileItem } from "../store/entities";
+import { ProjectFileItem, ProjectFileItemTranslation } from "../store/entities";
 import { ApiError } from "../utils/errorTypes";
 
 const fileContentState: FileContentState = {
@@ -49,10 +49,20 @@ const fileContentAction: FileContentAction = {
   projectId: "testProjectId",
   fileId: "testFileId",
   projectFileItems: [
-    { id: "hash", source: "source", target: "target" } as ProjectFileItem,
+    {
+      id: "hash",
+      source: "source",
+      description: "",
+      translations: [],
+      tokens: [],
+      targetLanguage: "",
+    } as ProjectFileItem,
   ],
   targetLanguage: "testTargetLanguage",
-  updateFileItemData: { id: "testField", value: "value" },
+  updateFileItemData: {
+    id: "testField",
+    projectFileItemTranslation: {} as ProjectFileItemTranslation,
+  },
   searchTerm: "testSearchTerm",
   type: "",
   error: errorMock,

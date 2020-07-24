@@ -9,10 +9,10 @@ const router = Router();
  *                      Get file content - "GET /api/project-item-content/:projectId?fileId=fileId"
  **********************************************************************/
 
-// tslint:disable-next-line: no-unbound-method
 router.get(
   "/:projectId",
   mustAuthenticated,
+  // tslint:disable-next-line: no-unbound-method
   ProjectItemContentController.getfileContent
 );
 
@@ -25,10 +25,10 @@ router.get(
  *                          projectFileItems: ProjectFileItem[]
  ******************************************************************************/
 
-// tslint:disable-next-line: no-unbound-method
 router.put(
   "/",
   mustAuthenticated,
+  // tslint:disable-next-line: no-unbound-method
   ProjectItemContentController.updatefileContent
 );
 
