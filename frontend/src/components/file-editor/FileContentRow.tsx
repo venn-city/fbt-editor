@@ -121,19 +121,15 @@ const FileContentRow = ({
   const [debouncedTarget] = useDebounce(target, 1000);
 
   useEffect(() => {
-    if (debouncedTarget !== target) {
-      if (target) {
-        dispatch(
-          updateFileContentField({
-            id: projectFileItem.id,
-            projectFileItemTranslation: {
-              translation: target,
-              variations: currentVariations,
-            } as ProjectFileItemTranslation,
-          })
-        );
-      }
-    }
+    dispatch(
+      updateFileContentField({
+        id: projectFileItem.id,
+        projectFileItemTranslation: {
+          translation: debouncedTarget,
+          variations: currentVariations,
+        } as ProjectFileItemTranslation,
+      })
+    );
   }, [debouncedTarget]);
 
   return (
