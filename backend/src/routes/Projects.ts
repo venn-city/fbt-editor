@@ -1,6 +1,6 @@
 import { Router } from "express";
-import mustAuthenticated from 'src/middlewares/mustAuthenticated';
-import ProjectController from './../controllers/ProjectController';
+import mustAuthenticated from "src/middlewares/mustAuthenticated";
+import ProjectController from "./../controllers/ProjectController";
 
 // Init shared
 const router = Router();

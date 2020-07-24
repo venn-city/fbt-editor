@@ -1,13 +1,13 @@
-import { Snackbar } from '@material-ui/core';
-import { Alert, AlertTitle } from '@material-ui/lab';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { clearLastError, getLastError } from '../store/duck/errors';
+import { Snackbar } from "@material-ui/core";
+import { Alert, AlertTitle } from "@material-ui/lab";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { clearLastError, getLastError } from "../store/duck/errors";
 
 const ErrorSnackbar = () => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
-  const { message = '', status = 0 } = useSelector(getLastError);
+  const { message = "", status = 0 } = useSelector(getLastError);
 
   // @ts-ignore
   useEffect(() => {
@@ -22,15 +22,16 @@ const ErrorSnackbar = () => {
   };
 
   return (
-
     <Snackbar
-      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
       autoHideDuration={5000}
       open={open}
       onClose={handleClose}
     >
       <Alert severity="error" onClose={handleClose}>
-        <AlertTitle>{message} - {status}</AlertTitle>
+        <AlertTitle>
+          {message} - {status}
+        </AlertTitle>
       </Alert>
     </Snackbar>
   );

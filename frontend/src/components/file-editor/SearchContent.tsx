@@ -1,28 +1,40 @@
-import { Grid, IconButton, InputAdornment, makeStyles, TextField } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
-import SearchIcon from '@material-ui/icons/Search';
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useDebounce } from 'use-debounce';
-import { clearFilteredFileContent, setFilteredFileContent } from '../../store/duck/fileContent';
+import {
+  Grid,
+  IconButton,
+  InputAdornment,
+  makeStyles,
+  TextField,
+} from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
+import SearchIcon from "@material-ui/icons/Search";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useDebounce } from "use-debounce";
+import {
+  clearFilteredFileContent,
+  setFilteredFileContent,
+} from "../../store/duck/fileContent";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    backgroundColor: '#bbdef7',
-  },
-  searchField: {
-    border: 'none',
-  },
-  input: {
-    padding: 0,
-  },
-}), { name: 'SearchContent' });
+const useStyles = makeStyles(
+  (theme) => ({
+    root: {
+      backgroundColor: "#bbdef7",
+    },
+    searchField: {
+      border: "none",
+    },
+    input: {
+      padding: 0,
+    },
+  }),
+  { name: "SearchContent" }
+);
 
 const SearchContent = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [openSearch, setOpenSearch] = useState(false);
   const [debouncedSearchTerm] = useDebounce(searchTerm, 500);
 
@@ -69,15 +81,13 @@ const SearchContent = () => {
         </Grid>
       )}
       <Grid item>
-        <IconButton onClick={() => {
-          setSearchTerm('');
-          setOpenSearch(!openSearch);
-        }}
+        <IconButton
+          onClick={() => {
+            setSearchTerm("");
+            setOpenSearch(!openSearch);
+          }}
         >
-          {openSearch
-            ? <CloseIcon />
-            : <SearchIcon />
-          }
+          {openSearch ? <CloseIcon /> : <SearchIcon />}
         </IconButton>
       </Grid>
     </Grid>

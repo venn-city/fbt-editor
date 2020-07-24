@@ -1,6 +1,5 @@
-export * from './auth';
-export * from './fileContent';
-export * from './projectItems';
-export * from './projects';
-export * from './recentFiles';
-
+export * from "./auth";
+export * from "./fileContent";
+export * from "./projectItems";
+export * from "./projects";
+export * from "./recentFiles";

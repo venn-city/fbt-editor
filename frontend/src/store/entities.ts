@@ -1,5 +1,5 @@
 export interface Item {
-  fileId: string
+  fileId: string;
   id: string;
   name: string;
   projectId: string;
@@ -12,47 +12,58 @@ export interface Project extends Item {
 }
 
 export interface ProjectItem extends Item {
-  type: ProjectItemType,
+  type: ProjectItemType;
 }
 
-export interface RecentFile extends Item {
-}
+export interface RecentFile extends Item {}
 
 export interface ProjectFileItem {
   id: string;
   source: string;
   description: string;
-  target: string;
   targetLanguage: string;
+  tokens: TranslationSourceTokenItem[];
+  translations: ProjectFileItemTranslation[];
+}
+
+export interface ProjectFileItemTranslation {
+  translation: string;
+  variations: { [key: number]: number };
 }
 
 export interface ProjectFileContent {
-  projectId: string,
-  targetLanguage: string,
-  fileId: string,
-  projectFileItems: ProjectFileItem[]
+  projectId: string;
+  targetLanguage: string;
+  fileId: string;
+  projectFileItems: ProjectFileItem[];
+}
+
+export interface TranslationSourceTokenItem {
+  token: string;
+  type: number;
+  singular: boolean;
 }
 
 export enum ProjectItemType {
-  File = 'File',
-  Folder = 'Folder'
+  File = "File",
+  Folder = "Folder",
 }
 
 export interface CreateItemRequest {
-  projectId: string,
-  parentFolderId: string,
-  name: string,
-  targetLanguage: string
+  projectId: string;
+  parentFolderId: string;
+  name: string;
+  targetLanguage: string;
 }
 
 export interface DeleteItemRequest {
-  projectId: string,
+  projectId: string;
   itemId: string;
 }
 
 export interface UpdateFileItemData {
-  id: string,
-  value: string;
+  id: string;
+  projectFileItemTranslation: ProjectFileItemTranslation;
 }
 
 export interface LoginUserRequest {
@@ -61,8 +72,8 @@ export interface LoginUserRequest {
 }
 
 export interface CurrentUser {
-  tokenId: string,
-  email: string
+  tokenId: string;
+  email: string;
   profileImageUrl: string;
   name: string;
 }
@@ -71,3 +82,17 @@ export interface AuthClientData {
   clientId: string;
 }
 
+export interface TokenData {
+  name: string;
+  value: number;
+  index: number;
+  displayName: string;
+  possibleValues: { [index: number]: string };
+}
+
+export interface TokenInfo {
+  name: string;
+  type: number;
+  displayName: string;
+  required: boolean;
+}

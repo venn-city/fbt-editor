@@ -1,0 +1,70 @@
+{
+ "phrases": [
+  {
+   "hashToText": {
+    "PqPPir8Kg9xSlqdednPFOg==": "{name} has shared {=a photo} with you"
+   },
+   "filepath": "src/example/Example.react.js",
+   "line_beg": 215,
+   "col_beg": 16,
+   "line_end": 229,
+   "col_end": 22,
+   "desc": "example 1",
+   "project": "fbt-demo-project",
+   "type": "table",
+   "jsfbt": {
+    "t": {
+     "*": "{name} has shared {=a photo} with you"
+    },
+    "m": [
+     {
+      "token": "name",
+      "type": 1
+     },
+	 {
+      "token": "__viewing_user__",
+      "type": 3
+     },
+	 {
+      "token": "__subject__",
+      "type": 3
+     },
+	 {
+      "token": "number",
+      "type": 28
+     }
+    ]
+   }
+  },
+  {
+   "hashToText": {
+    "QqPPir8Kg9xSlqdednPFOg==": "{name} has shared {=a photo} with you"
+   },
+   "filepath": "src/example/Example.react.js",
+   "line_beg": 215,
+   "col_beg": 16,
+   "line_end": 229,
+   "col_end": 22,
+   "desc": "example 1",
+   "project": "fbt-demo-project",
+   "type": "table",
+   "jsfbt": {
+    "t": {
+     "*": "{name} has shared {=a photo} with you"
+    },
+    "m": [
+     {
+      "token": "name",
+      "type": 1
+     }
+    ]
+   }
+  }
+ 
+ ],
+ "childParentMappings": {
+  "14": 13,
+  "23": 22,
+  "24": 23
+ }
+}

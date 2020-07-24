@@ -1,0 +1,227 @@
+{
+  "translations": {
+    "PqPPir8Kg9xSlqdednPFOg==": {
+      "tokens": [ "name", "__subject__", "__viewing_user__" ],
+      "types": [ 3, 3, 3 ],
+      "translations": [
+        {
+          "translation": "111",
+          "variations": {
+            "0": "1",
+            "1": "1",
+            "2": "1"
+          }
+        },
+        {
+          "translation": "112",
+          "variations": {
+            "0": "1",
+            "1": "1",
+            "2": "2"
+          }
+        },
+        {
+          "translation": "113",
+          "variations": {
+            "0": "1",
+            "1": "1",
+            "2": "3"
+          }
+        },
+        {
+          "translation": "121",
+          "variations": {
+            "0": "1",
+            "1": "2",
+            "2": "1"
+          }
+        },
+        {
+          "translation": "122",
+          "variations": {
+            "0": "1",
+            "1": "2",
+            "2": "2"
+          }
+        },
+        {
+          "translation": "123",
+          "variations": {
+            "0": "1",
+            "1": "2",
+            "2": "3"
+          }
+        },
+        {
+          "translation": "131",
+          "variations": {
+            "0": "1",
+            "1": "3",
+            "2": "1"
+          }
+        },
+        {
+          "translation": "132",
+          "variations": {
+            "0": "1",
+            "1": "3",
+            "2": "2"
+          }
+        },
+        {
+          "translation": "133",
+          "variations": {
+            "0": "1",
+            "1": "3",
+            "2": "3"
+          }
+        },
+        {
+          "translation": "211",
+          "variations": {
+            "0": "2",
+            "1": "1",
+            "2": "1"
+          }
+        },
+        {
+          "translation": "212",
+          "variations": {
+            "0": "2",
+            "1": "1",
+            "2": "2"
+          }
+        },
+        {
+          "translation": "213",
+          "variations": {
+            "0": "2",
+            "1": "1",
+            "2": "3"
+          }
+        },
+        {
+          "translation": "221",
+          "variations": {
+            "0": "2",
+            "1": "2",
+            "2": "1"
+          }
+        },
+        {
+          "translation": "222",
+          "variations": {
+            "0": "2",
+            "1": "2",
+            "2": "2"
+          }
+        },
+        {
+          "translation": "223",
+          "variations": {
+            "0": "2",
+            "1": "2",
+            "2": "3"
+          }
+        },
+        {
+          "translation": "231",
+          "variations": {
+            "0": "2",
+            "1": "3",
+            "2": "1"
+          }
+        },
+        {
+          "translation": "232",
+          "variations": {
+            "0": "2",
+            "1": "3",
+            "2": "2"
+          }
+        },
+        {
+          "translation": "233",
+          "variations": {
+            "0": "2",
+            "1": "3",
+            "2": "3"
+          }
+        },
+        {
+          "translation": "311",
+          "variations": {
+            "0": "3",
+            "1": "1",
+            "2": "1"
+          }
+        },
+        {
+          "translation": "312",
+          "variations": {
+            "0": "3",
+            "1": "1",
+            "2": "2"
+          }
+        },
+        {
+          "translation": "313",
+          "variations": {
+            "0": "3",
+            "1": "1",
+            "2": "3"
+          }
+        },
+        {
+          "translation": "321",
+          "variations": {
+            "0": "3",
+            "1": "2",
+            "2": "1"
+          }
+        },
+        {
+          "translation": "322",
+          "variations": {
+            "0": "3",
+            "1": "2",
+            "2": "2"
+          }
+        },
+        {
+          "translation": "323",
+          "variations": {
+            "0": "3",
+            "1": "2",
+            "2": "3"
+          }
+        },
+        {
+          "translation": "331",
+          "variations": {
+            "0": "3",
+            "1": "3",
+            "2": "1"
+          }
+        },
+        {
+          "translation": "332",
+          "variations": {
+            "0": "3",
+            "1": "3",
+            "2": "2"
+          }
+        },
+        {
+          "translation": "333",
+          "variations": {
+            "0": "3",
+            "1": "2",
+            "2": "3"
+          }
+        }
+      ]
+    }
+  },
+  "fb-locale": "de"
+}

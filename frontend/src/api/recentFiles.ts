@@ -1,7 +1,8 @@
-import { RecentFile } from '../store/entities';
-import { getAPIPath, request } from './core';
+import { RecentFile } from "../store/entities";
+import { getAPIPath, request } from "./core";
 
-export const fetchRecentFilesList = ():Promise<RecentFile[]> => request<RecentFile[]>(
-  getAPIPath(`recent-files`),
-  { method: 'GET', params: {} },
-);
+export const fetchRecentFilesList = (): Promise<RecentFile[]> =>
+  request<RecentFile[]>(getAPIPath(`recent-files`), {
+    method: "GET",
+    params: {},
+  });

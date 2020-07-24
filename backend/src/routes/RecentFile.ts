@@ -1,6 +1,6 @@
 import { Router } from "express";
-import RecentFileController from './../controllers/RecentFileController';
-import mustAuthenticated from 'src/middlewares/mustAuthenticated';
+import mustAuthenticated from "src/middlewares/mustAuthenticated";
+import RecentFileController from "./../controllers/RecentFileController";
 
 // Init shared
 const router = Router();
