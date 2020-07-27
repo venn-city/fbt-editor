@@ -40,11 +40,11 @@ const INITIAL_STATE: UsersState = {
 };
 
 export const loginUser = (
-  loginUserRequest: LoginUserRequest
+  loginUserRequest: LoginUserRequest,
 ): UsersStateAction =>
   ({ type: LOGIN_USER, loginUserRequest } as UsersStateAction);
 export const loginUserSucess = (
-  currentUser: CurrentUser | null
+  currentUser: CurrentUser | null,
 ): UsersStateAction =>
   ({ type: LOGIN_USER_SUCCESS, currentUser } as UsersStateAction);
 export const loginUserFailure = (error: ApiError): UsersStateAction =>
@@ -54,7 +54,7 @@ export const logout = (): UsersStateAction =>
 export const fetchAuthClientData = (): UsersStateAction =>
   ({ type: FETCH_AUTH_CLIENT_DATA } as UsersStateAction);
 export const fetchAuthClientDataSuccess = (
-  authClientData: AuthClientData
+  authClientData: AuthClientData,
 ): UsersStateAction =>
   ({
     type: FETCH_AUTH_CLIENT_DATA_SUCCESS,
@@ -65,7 +65,7 @@ export const fetchAuthClientDataFailure = (error: ApiError): UsersStateAction =>
 
 export const authReducer = (
   state: UsersState = INITIAL_STATE,
-  action: UsersStateAction
+  action: UsersStateAction,
 ) => {
   switch (action.type) {
     case LOGIN_USER:
@@ -138,7 +138,7 @@ export function* loginUserSaga(usersStateAction: UsersStateAction): Generator {
     // @ts-ignore
     const currentUser: CurrentUser = yield* requestAPI(
       API.loginUser,
-      usersStateAction.loginUserRequest
+      usersStateAction.loginUserRequest,
     );
     yield put(loginUserSucess(currentUser));
   } catch (error) {
@@ -151,7 +151,7 @@ export function* fetchAuthClientDataSaga(): Generator {
   try {
     // @ts-ignore
     const authClientData: AuthClientData = yield* requestAPI(
-      API.fetchAuthClientData
+      API.fetchAuthClientData,
     );
     yield put(fetchAuthClientDataSuccess(authClientData));
   } catch (error) {

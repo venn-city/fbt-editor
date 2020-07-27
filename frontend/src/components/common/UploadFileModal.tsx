@@ -9,7 +9,7 @@ import {
 import React, { useState } from "react";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     root: {
       width: 500,
     },
@@ -19,7 +19,7 @@ const useStyles = makeStyles(
       marginTop: theme.spacing(2),
     },
   }),
-  { name: "CreataProjectItemModal" }
+  { name: "CreataProjectItemModal" },
 );
 
 export interface UploadFileModalProps {

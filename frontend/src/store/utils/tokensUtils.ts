@@ -9,17 +9,17 @@ import {
 
 export const getTokensData = (
   translationSourceTokenItems: TranslationSourceTokenItem[],
-  projectFileItemTranslation: ProjectFileItemTranslation
+  projectFileItemTranslation: ProjectFileItemTranslation,
 ) => {
   var result: TokenData[] = [];
   _.forEach(orderedTokens, (token: TokenInfo) => {
     const translationSourceTokenItem: TranslationSourceTokenItem = _.filter(
       translationSourceTokenItems,
-      (item: TranslationSourceTokenItem) => item.token === token.name
+      (item: TranslationSourceTokenItem) => item.token === token.name,
     )[0];
     if (translationSourceTokenItem) {
       const index: number = translationSourceTokenItems.indexOf(
-        translationSourceTokenItem
+        translationSourceTokenItem,
       );
       const tokenData = {
         name: token.name,

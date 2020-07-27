@@ -24,7 +24,7 @@ import {
 import { CurrentUser, Item } from "../../store/entities";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     root: {
       backgroundColor: "#e3f2fb",
       height: "100vh",
@@ -83,7 +83,7 @@ const useStyles = makeStyles(
       paddingLeft: theme.spacing(1),
     },
   }),
-  { name: "LeftPanel" }
+  { name: "LeftPanel" },
 );
 
 export interface LeftPanelProps {

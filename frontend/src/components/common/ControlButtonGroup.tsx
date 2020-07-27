@@ -17,7 +17,7 @@ import React from "react";
 import { v4 as uuid } from "uuid";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     editIcon: {},
     spinner: {
       color: "#1771F1",
@@ -30,7 +30,7 @@ const useStyles = makeStyles(
       fontSize: 24,
     },
   }),
-  { name: "ControlButtonGroup" }
+  { name: "ControlButtonGroup" },
 );
 
 const ButtonsIconMap: { [id: string]: SvgIconComponent } = {
@@ -86,7 +86,7 @@ const ControlButtonGroup = ({ buttons, classes: classesProp }: any) => {
       );
 
       return ButtonWithToolTip(iconButton, tooltip);
-    }
+    },
   );
 };
 

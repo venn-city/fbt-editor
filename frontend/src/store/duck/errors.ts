@@ -24,7 +24,7 @@ export const clearLastError = () => ({ type: CLEAR_LAST_ERROR });
 
 export const errorsReducer = (
   state: ErrorsState = INITIAL_STATE,
-  action: ErrorsAction
+  action: ErrorsAction,
 ): ErrorsState => {
   switch (action.type) {
     case ADD_LAST_ERROR:

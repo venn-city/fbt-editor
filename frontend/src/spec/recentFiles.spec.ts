@@ -48,7 +48,7 @@ describe("recentFiles actions", () => {
 
   it("fetchRecentFilesListSuccess", () => {
     const { recentFiles, type } = fetchRecentFilesListSuccess(
-      mockState.recentFiles
+      mockState.recentFiles,
     );
 
     expect(type).toBe(FETCH_RECENT_FILES_LIST_SUCCESS);
@@ -139,7 +139,7 @@ describe("selectors", () => {
   describe("getRecentFilesList", () => {
     it("should return recentFiles list", () => {
       expect(getRecentFilesList(state)).toEqual(
-        recentFilesState.recentFilesList
+        recentFilesState.recentFilesList,
       );
     });
   });

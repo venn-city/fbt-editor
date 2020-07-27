@@ -63,7 +63,7 @@ describe("projectItems actions", () => {
   it("fetchProjectItemsList", () => {
     const { type, projectId, projectItemId } = fetchProjectItemsList(
       mockState.projectId,
-      mockState.projectItemId
+      mockState.projectItemId,
     );
 
     expect(type).toBe(FETCH_PROJECT_ITEMS_LIST);
@@ -73,7 +73,7 @@ describe("projectItems actions", () => {
 
   it("fetchProjectItemsListSuccess", () => {
     const { projectItems, type } = fetchProjectItemsListSuccess(
-      mockState.projectItems
+      mockState.projectItems,
     );
 
     expect(type).toBe(FETCH_PROJECT_ITEMS_LIST_SUCCESS);
@@ -99,10 +99,10 @@ describe("projectItems actions", () => {
     expect(action.сreateItemRequest!.projectId).toBe(mockState.projectId);
     expect(action.сreateItemRequest!.name).toBe(mockState.projectItemId);
     expect(action.сreateItemRequest!.targetLanguage).toBe(
-      mockState.targetLanguage
+      mockState.targetLanguage,
     );
     expect(action.сreateItemRequest!.parentFolderId).toBe(
-      mockState.parentFolderId
+      mockState.parentFolderId,
     );
   });
 
@@ -237,7 +237,7 @@ describe("selectors", () => {
   describe("getProjectItemsList", () => {
     it("should return projectItems list", () => {
       expect(getProjectItemsList(state)).toEqual(
-        Object.values(projectItemsState.projectItemsList)
+        Object.values(projectItemsState.projectItemsList),
       );
     });
   });
@@ -245,7 +245,7 @@ describe("selectors", () => {
   describe("getIsCreatingProjectItem", () => {
     it("should return status of creating projectItem", () => {
       expect(getIsCreatingProjectItem(state)).toEqual(
-        projectItemsState.isUpdatingProjectItems
+        projectItemsState.isUpdatingProjectItems,
       );
     });
   });

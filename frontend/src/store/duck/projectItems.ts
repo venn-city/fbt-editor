@@ -65,7 +65,7 @@ const INITIAL_STATE: ProjectItemsState = {
 
 export const fetchProjectItemsList = (
   projectId: string,
-  projectItemId?: string | undefined
+  projectItemId?: string | undefined,
 ): ProjectItemsAction =>
   ({
     type: FETCH_PROJECT_ITEMS_LIST,
@@ -74,14 +74,14 @@ export const fetchProjectItemsList = (
   } as ProjectItemsAction);
 
 export const fetchProjectItemsListSuccess = (
-  projectItems: ProjectItem[]
+  projectItems: ProjectItem[],
 ): ProjectItemsAction =>
   ({
     type: FETCH_PROJECT_ITEMS_LIST_SUCCESS,
     projectItems,
   } as ProjectItemsAction);
 export const fetchProjectItemsListFailure = (
-  error: ApiError
+  error: ApiError,
 ): ProjectItemsAction =>
   ({ type: FETCH_PROJECT_ITEMS_LIST_FAILURE, error } as ProjectItemsAction);
 
@@ -89,7 +89,7 @@ export const reverseProjectItemsList = (): ProjectItemsAction =>
   ({ type: REVERSE_PROJECT_ITEMS_LIST } as ProjectItemsAction);
 
 export const createProjectItem = (
-  сreateItemRequest: CreateItemRequest
+  сreateItemRequest: CreateItemRequest,
 ): ProjectItemsAction =>
   ({
     type: CREATE_PROJECT_ITEM,
@@ -103,7 +103,7 @@ export const clearProjectItemStatus = () =>
   ({ type: CLEAR_PROJECT_ITEM_STATUS } as ProjectItemsAction);
 
 export const deleteProjectItem = (
-  deleteItemRequest: DeleteItemRequest
+  deleteItemRequest: DeleteItemRequest,
 ): ProjectItemsAction =>
   ({ type: DELETE_PROJECT_ITEM, deleteItemRequest } as ProjectItemsAction);
 export const deleteProjectItemSuccess = (): ProjectItemsAction =>
@@ -120,7 +120,7 @@ export const uploadSourceFailure = (error: ApiError): ProjectItemsAction =>
 
 export const projectItemsReducer = (
   state: ProjectItemsState = INITIAL_STATE,
-  action: ProjectItemsAction
+  action: ProjectItemsAction,
 ) => {
   switch (action.type) {
     case FETCH_PROJECT_ITEMS_LIST:
@@ -218,7 +218,7 @@ export const getFilesList = (state: {
   projectItems: ProjectItemsState;
 }): ProjectItem[] =>
   getProjectItems(state).projectItemsList.filter(
-    (item) => item.type === ProjectItemType.File
+    item => item.type === ProjectItemType.File,
   );
 export const getIsLoading = (state: {
   projectItems: ProjectItemsState;
@@ -239,7 +239,7 @@ export function* fetchProjectItemsSaga({
     const { items: projectItems } = yield* requestAPI(
       API.fetchProjectItems,
       projectId,
-      projectItemId
+      projectItemId,
     );
     yield put(fetchProjectItemsListSuccess(projectItems));
   } catch (error) {
@@ -271,7 +271,7 @@ export function* deleteProjectItemSaga(action: ProjectItemsAction) {
 }
 
 const delay = (time: number) =>
-  new Promise((resolve) => setTimeout(resolve, time));
+  new Promise(resolve => setTimeout(resolve, time));
 
 export function* uploadSourceFileSaga(action: ProjectItemsAction) {
   try {

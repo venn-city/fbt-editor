@@ -16,7 +16,7 @@ import {
 } from "../../store/duck/fileContent";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     root: {
       backgroundColor: "#bbdef7",
     },
@@ -27,7 +27,7 @@ const useStyles = makeStyles(
       padding: 0,
     },
   }),
-  { name: "SearchContent" }
+  { name: "SearchContent" },
 );
 
 const SearchContent = () => {

@@ -10,14 +10,14 @@ import ProjectItemsPage from "./components/projectItems/ProjectItemsPage";
 import ProjectsPage from "./components/projects/ProjectsPage";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     page: {
       [theme.breakpoints.up("md")]: {
         display: "flex",
       },
     },
   }),
-  { name: "App" }
+  { name: "App" },
 );
 
 function App() {

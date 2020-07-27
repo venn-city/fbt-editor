@@ -35,11 +35,11 @@ const INITIAL_STATE: RecentFilesState = {
 export const fetchRecentFilesList = (): RecentFilesAction =>
   ({ type: FETCH_RECENT_FILES_LIST } as RecentFilesAction);
 export const fetchRecentFilesListSuccess = (
-  recentFiles: RecentFile[]
+  recentFiles: RecentFile[],
 ): RecentFilesAction =>
   ({ type: FETCH_RECENT_FILES_LIST_SUCCESS, recentFiles } as RecentFilesAction);
 export const fetchRecentFilesListFailure = (
-  error: ApiError
+  error: ApiError,
 ): RecentFilesAction =>
   ({ type: FETCH_RECENT_FILES_LIST_FAILURE, error } as RecentFilesAction);
 export const reverseRecentFilesList = (): RecentFilesAction =>
@@ -47,7 +47,7 @@ export const reverseRecentFilesList = (): RecentFilesAction =>
 
 export const recentFilesReducer = (
   state: RecentFilesState = INITIAL_STATE,
-  action: RecentFilesAction
+  action: RecentFilesAction,
 ) => {
   switch (action.type) {
     case FETCH_RECENT_FILES_LIST:
@@ -93,7 +93,7 @@ export function* fetchRecentFiles(): Generator {
   try {
     // @ts-ignore
     const recentFiles: RecentFile[] = yield* requestAPI(
-      API.fetchRecentFilesList
+      API.fetchRecentFilesList,
     );
     yield put(fetchRecentFilesListSuccess(recentFiles));
   } catch (error) {

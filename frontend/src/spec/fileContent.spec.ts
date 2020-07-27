@@ -72,7 +72,7 @@ describe("fileContent actions", () => {
   it("fetchFileContent", () => {
     const { type, projectId, fileId } = fetchFileContent(
       fileContentAction.projectId,
-      fileContentAction.fileId
+      fileContentAction.fileId,
     );
 
     expect(type).toBe(FETCH_FILE_CONTENT);
@@ -83,7 +83,7 @@ describe("fileContent actions", () => {
   it("fetchFileContentSuccess", () => {
     const { targetLanguage, projectFileItems, type } = fetchFileContentSuccess(
       fileContentAction.projectFileItems!,
-      fileContentAction.targetLanguage!
+      fileContentAction.targetLanguage!,
     );
 
     expect(type).toBe(FETCH_FILE_CONTENT_SUCCESS);
@@ -109,7 +109,7 @@ describe("fileContent actions", () => {
       fileContentAction.projectId,
       fileContentAction.fileId,
       fileContentAction.targetLanguage!,
-      fileContentAction.projectFileItems!
+      fileContentAction.projectFileItems!,
     );
 
     expect(type).toBe(UPDATE_FILE_CONTENT);
@@ -132,7 +132,7 @@ describe("fileContent actions", () => {
 
   it("updateFileContentField", () => {
     const { type, updateFileItemData } = updateFileContentField(
-      fileContentAction.updateFileItemData!
+      fileContentAction.updateFileItemData!,
     );
 
     expect(updateFileItemData).toBe(fileContentAction.updateFileItemData);
@@ -141,7 +141,7 @@ describe("fileContent actions", () => {
 
   it("setFilteredFileContent", () => {
     const { type, searchTerm } = setFilteredFileContent(
-      fileContentAction.searchTerm!
+      fileContentAction.searchTerm!,
     );
 
     expect(type).toBe(SET_FILTERED_FILE_CONTENT);
@@ -263,7 +263,7 @@ describe("selectors", () => {
   describe("getFileContentList", () => {
     it("should return fileContentList", () => {
       expect(getFileContentList(state)).toEqual(
-        Object.values(fileContentState.fileContentMap)
+        Object.values(fileContentState.fileContentMap),
       );
     });
   });
@@ -271,7 +271,7 @@ describe("selectors", () => {
   describe("getFilteredContentList", () => {
     it("should return filtered content list", () => {
       expect(getFilteredContentList(state)).toEqual(
-        fileContentState.filteredFileContentList
+        fileContentState.filteredFileContentList,
       );
     });
   });

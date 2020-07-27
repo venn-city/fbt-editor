@@ -9,7 +9,7 @@ export default function () {
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore(
     reducer,
-    composeEnhancers(applyMiddleware(sagaMiddleware))
+    composeEnhancers(applyMiddleware(sagaMiddleware)),
   );
 
   sagaMiddleware.run(rootSaga);

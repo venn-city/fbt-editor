@@ -14,7 +14,7 @@ import { getTokensData } from "../../store/utils/tokensUtils";
 import TokenSelector from "./TokenSelector";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     contentContainer: {
       padding: theme.spacing(0.5),
     },
@@ -34,7 +34,7 @@ const useStyles = makeStyles(
       marginRight: theme.spacing(0.5),
     },
   }),
-  { name: "FileContentRow" }
+  { name: "FileContentRow" },
 );
 
 interface FileContentRowProps {
@@ -56,12 +56,12 @@ const FileContentRow = ({
   }>({});
   const [tokens, setTokens] = useState<TokenData[]>([]);
   const [target, setTarget] = useState(
-    projectFileItem?.translations[0]?.translation || ""
+    projectFileItem?.translations[0]?.translation || "",
   );
 
   const IsValidToken = (
     tokenIndex: number | null,
-    tokenValue: number | null
+    tokenValue: number | null,
   ) => {
     return tokenIndex !== null && tokenValue !== null && tokenValue != 0;
   };
@@ -77,7 +77,7 @@ const FileContentRow = ({
   useEffect(() => {
     let translationTokens: TokenData[] = getTokensData(
       projectFileItem.tokens,
-      projectFileItem.translations[0]
+      projectFileItem.translations[0],
     );
     setTokens(translationTokens);
     setCurrentVariations(getCurrentVariations());
@@ -86,7 +86,7 @@ const FileContentRow = ({
   const getCurrentTranslation = (): ProjectFileItemTranslation => {
     const translationByVariation = getTranslationByVariation(
       projectFileItem.translations,
-      currentVariations
+      currentVariations,
     );
     if (!translationByVariation) {
       const newTranslation = {
@@ -102,7 +102,7 @@ const FileContentRow = ({
 
   const getCurrentVariations = () => {
     let variations: { [index: number]: number } = {};
-    _.forEach(tokens, (token) => {
+    _.forEach(tokens, token => {
       if (IsValidToken(token.index, token.value)) {
         variations[token.index] = token.value;
       }
@@ -112,10 +112,10 @@ const FileContentRow = ({
 
   const handleSubjectTokenGenderChange = (currentToken: TokenData) => {
     _.forEach(
-      _.filter(tokens, (token) => token.index === currentToken.index),
-      (token: TokenData) => (token.value = currentToken.value)
+      _.filter(tokens, token => token.index === currentToken.index),
+      (token: TokenData) => (token.value = currentToken.value),
     );
-    setTokens((prev) => [...prev]);
+    setTokens(prev => [...prev]);
   };
 
   const [debouncedTarget] = useDebounce(target, 1000);
@@ -129,7 +129,7 @@ const FileContentRow = ({
           translation: debouncedTarget,
           variations: currentVariations,
         } as ProjectFileItemTranslation,
-      })
+      }),
     );
   }, [debouncedTarget]);
 
@@ -185,7 +185,7 @@ const FileContentRow = ({
         justify="flex-start"
         key={projectFileItem.id + "toolbar"}
       >
-        {tokens.map((token) => {
+        {tokens.map(token => {
           return (
             <Grid
               container

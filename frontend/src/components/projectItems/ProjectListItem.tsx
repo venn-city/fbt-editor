@@ -14,7 +14,7 @@ import {
 import ControlButtonGroup from "../common/ControlButtonGroup";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     root: {
       backgroundColor: "#bbdef7",
       paddingTop: theme.spacing(0.5),
@@ -33,7 +33,7 @@ const useStyles = makeStyles(
       marginRight: 10,
     },
   }),
-  { name: "Folder" }
+  { name: "Folder" },
 );
 
 export interface ProjectItemProps {
@@ -57,7 +57,7 @@ const ProjectListItem = ({ projectItem }: ProjectItemProps) => {
       deleteProjectItem({
         projectId,
         itemId: projectItem.id,
-      })
+      }),
     );
 
   const onEntityClick = (search: string, method: any, additionalPath = "") => {
@@ -100,10 +100,10 @@ const ProjectListItem = ({ projectItem }: ProjectItemProps) => {
           buttons={[
             isFile &&
               !projectItem.readonly && {
-                name: "edit",
-                onClick: () => onFileClick(projectItem.id),
-                tooltip: "Edit file",
-              },
+              name: "edit",
+              onClick: () => onFileClick(projectItem.id),
+              tooltip: "Edit file",
+            },
             {
               name: "delete",
               onClick: deleteAction,

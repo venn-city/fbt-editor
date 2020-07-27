@@ -7,7 +7,7 @@ import { getAPIPath, postFormData, request } from "./core";
 
 export const fetchProjectItems = (
   projectId: string,
-  folderId: string
+  folderId: string,
 ): Promise<ProjectItem[]> => {
   const params = folderId ? { folderId } : {};
 
@@ -18,7 +18,7 @@ export const fetchProjectItems = (
 };
 
 export const createProjectItem = (
-  createItemRequest: CreateItemRequest
+  createItemRequest: CreateItemRequest,
 ): Promise<void> =>
   request(getAPIPath(`project-items`), {
     method: "POST",
@@ -30,7 +30,7 @@ export const uploadSourceFile = (formData: FormData) => {
 };
 
 export const deleteProjectItem = (
-  deleteItemRequest: DeleteItemRequest
+  deleteItemRequest: DeleteItemRequest,
 ): Promise<void> =>
   request<void>(getAPIPath(`project-items`), {
     method: "DELETE",

@@ -21,7 +21,7 @@ import {
 } from "../../utils/targetLanguage";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     root: {
       width: 500,
     },
@@ -34,7 +34,7 @@ const useStyles = makeStyles(
       marginTop: theme.spacing(2),
     },
   }),
-  { name: "CreateProjectItemModal" }
+  { name: "CreateProjectItemModal" },
 );
 
 export interface CreateProjectItemModalProps {
@@ -64,7 +64,7 @@ const CreateProjectItemModal = ({
       setIsSaveButtonDisabled(
         projectItemName === "" ||
           path.extname(projectItemName) === "" ||
-          targetLanguage === ""
+          targetLanguage === "",
       );
       return;
     }

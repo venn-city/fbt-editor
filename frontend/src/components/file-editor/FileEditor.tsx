@@ -23,7 +23,7 @@ import FileContentRow from "./FileContentRow";
 import SearchContent from "./SearchContent";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     root: {
       backgroundColor: "#bbdef7",
     },
@@ -66,7 +66,7 @@ const useStyles = makeStyles(
       },
     },
   }),
-  { name: "FileEditor" }
+  { name: "FileEditor" },
 );
 
 const FileEditor = () => {
@@ -105,8 +105,8 @@ const FileEditor = () => {
         projectId,
         fileId as string,
         currentTargetLanguage,
-        fileContentList
-      )
+        fileContentList,
+      ),
     );
     redirectToCurrentFolder();
   };
@@ -116,7 +116,7 @@ const FileEditor = () => {
 
   const redirectToCurrentFolder = useCloseAfterCreation(
     backToCurrentFolder,
-    getIsLoading
+    getIsLoading,
   );
   const currentFileName = getCurrentFileName(fileId as string);
 

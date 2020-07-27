@@ -3,7 +3,7 @@ import { getAPIPath, request } from "./core";
 
 export const fetchFileContent = (
   projectId: string,
-  fileId: string
+  fileId: string,
 ): Promise<ProjectFileContent> =>
   request(getAPIPath(`project-item-content/${projectId}?fileId=${fileId}`), {
     method: "GET",
@@ -11,7 +11,7 @@ export const fetchFileContent = (
   });
 
 export const updateFileContent = (
-  projectFileContent: ProjectFileContent
+  projectFileContent: ProjectFileContent,
 ): Promise<void> =>
   request<void>(getAPIPath(`project-item-content`), {
     method: "PUT",

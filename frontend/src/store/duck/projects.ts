@@ -42,7 +42,7 @@ export const reverseProjectsList = (): ProjectsAction =>
 
 export const projectsReducer = (
   state: ProjectsState = INITIAL_STATE,
-  action: ProjectsAction
+  action: ProjectsAction,
 ) => {
   switch (action.type) {
     case FETCH_PROJECTS_LIST:

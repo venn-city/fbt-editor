@@ -9,13 +9,13 @@ import React from "react";
 import { TokenData } from "../../store/entities";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     formControl: {
       minWidth: 120,
       marginRight: theme.spacing(0.5),
     },
   }),
-  { name: "TokenSelector" }
+  { name: "TokenSelector" },
 );
 
 interface TokenSelectorProps {
@@ -29,7 +29,7 @@ const TokenSelector = ({ token, handleTokenChange }: TokenSelectorProps) => {
   const getLabelId = (token: TokenData) => `${token.name}-label`;
 
   const handleValueChange = (
-    event: React.ChangeEvent<{ name?: string; value: any }>
+    event: React.ChangeEvent<{ name?: string; value: any }>,
   ) => {
     token.value = Number(event.target.value);
     handleTokenChange(token);

@@ -17,7 +17,7 @@ import {
 import { CurrentUser, LoginUserRequest } from "../store/entities";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     root: {
       backgroundColor: "#bbdef7",
       overflow: "scroll",
@@ -30,7 +30,7 @@ const useStyles = makeStyles(
     },
     welcomeContainer: {},
   }),
-  { name: "ProjectItemsList" }
+  { name: "ProjectItemsList" },
 );
 
 const WelcomePage = () => {
@@ -71,7 +71,7 @@ const WelcomePage = () => {
   }, [dispatch, currentUser, isLoggedIn]);
 
   const responseSucessGoogle = (
-    response: GoogleLoginResponse | GoogleLoginResponseOffline
+    response: GoogleLoginResponse | GoogleLoginResponseOffline,
   ) => {
     const googleLoginResponse: GoogleLoginResponse = response as GoogleLoginResponse;
     if (googleLoginResponse) {

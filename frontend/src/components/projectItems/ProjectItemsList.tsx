@@ -35,7 +35,7 @@ import UploadFileModal from "../common/UploadFileModal";
 import ProjectListItem from "./ProjectListItem";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  theme => ({
     root: {
       backgroundColor: "#bbdef7",
       overflow: "scroll",
@@ -79,7 +79,7 @@ const useStyles = makeStyles(
       paddingRight: theme.spacing(2),
     },
   }),
-  { name: "ProjectItemsList" }
+  { name: "ProjectItemsList" },
 );
 
 interface ProjectItemsListProps {
@@ -114,7 +114,7 @@ const ProjectItemsList = ({ header }: ProjectItemsListProps) => {
     setOpenCreateProjectItemDialog,
   ] = useState(false);
   const [openUploadSourceFileDialog, setOpenUploadSourceFileDialog] = useState(
-    false
+    false,
   );
   const [projectItemType, setProjectItemType] = useState(ProjectItemType.File);
 
@@ -134,7 +134,7 @@ const ProjectItemsList = ({ header }: ProjectItemsListProps) => {
 
   const handleProjectItemSave = (
     name: string,
-    targetLanguage: string | undefined
+    targetLanguage: string | undefined,
   ) => {
     dispatch(
       createProjectItem({
@@ -142,7 +142,7 @@ const ProjectItemsList = ({ header }: ProjectItemsListProps) => {
         parentFolderId: folderId,
         name,
         targetLanguage,
-      } as CreateItemRequest)
+      } as CreateItemRequest),
     );
     setOpenCreateProjectItemDialog(false);
   };
