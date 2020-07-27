@@ -124,6 +124,7 @@ const FileContentRow = ({
     dispatch(
       updateFileContentField({
         id: projectFileItem.id,
+        tokens: tokens,
         projectFileItemTranslation: {
           translation: debouncedTarget,
           variations: currentVariations,

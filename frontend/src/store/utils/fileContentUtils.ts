@@ -1,7 +1,29 @@
 import _ from "lodash";
-import { ProjectFileItemTranslation } from "./../entities";
+import { FileContentAction, FileContentState } from "../duck/fileContent";
+import {
+  ProjectFileItem,
+  ProjectFileItemTranslation,
+  TokenData,
+  TranslationSourceTokenItem,
+} from "./../entities";
 
 export const getUpdatedTranslations = (
+  translations: ProjectFileItemTranslation[],
+  newTranslation: ProjectFileItemTranslation
+) => {
+  const currentTranslation = getTranslationByVariation(
+    translations,
+    newTranslation.variations
+  );
+  if (currentTranslation) {
+    currentTranslation.translation = newTranslation.translation;
+  } else {
+    translations.push(newTranslation);
+  }
+  return [...translations];
+};
+
+export const getUpdatedTokens = (
   translations: ProjectFileItemTranslation[],
   newTranslation: ProjectFileItemTranslation
 ) => {
@@ -31,8 +53,9 @@ export const getTranslationByVariation = (
       }
     );
   } else {
-    for (const key in Object.keys(variations)) {
-      const index: number = Number(key);
+    const variationKeys = Object.keys(variations);
+    for (const key in variationKeys) {
+      const index: number = Number(variationKeys[key]);
       filteredTranslations = _.filter(
         filteredTranslations,
         (itemTranslation: ProjectFileItemTranslation) => {
@@ -45,4 +68,40 @@ export const getTranslationByVariation = (
     }
   }
   return filteredTranslations[0];
+};
+
+export const getUpdatedProjectFileItem = (
+  state: FileContentState,
+  action: FileContentAction
+): ProjectFileItem => {
+  const currentProjectFileItem =
+    state.fileContentMap[action.updateFileItemData!.id];
+  const translations = getUpdatedTranslations(
+    currentProjectFileItem.translations,
+    action.updateFileItemData!.projectFileItemTranslation
+  );
+  const hasNewTokens = _.some(
+    translations,
+    (t: ProjectFileItemTranslation) =>
+      t.variations[action.updateFileItemData!.tokens.length - 1]
+  );
+  const updatedTokens = hasNewTokens
+    ? _.sortBy(
+        action.updateFileItemData!.tokens,
+        (token: TokenData) => token.index
+      ).map((t: TokenData) => mapTokenData(t))
+    : currentProjectFileItem.tokens;
+
+  return {
+    ...state.fileContentMap[action.updateFileItemData!.id],
+    tokens: updatedTokens,
+    translations: translations,
+  } as ProjectFileItem;
+};
+
+const mapTokenData = (tokenData: TokenData): TranslationSourceTokenItem => {
+  return {
+    token: tokenData.name,
+    type: tokenData.type,
+  } as TranslationSourceTokenItem;
 };

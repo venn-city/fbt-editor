@@ -63,6 +63,7 @@ export interface DeleteItemRequest {
 
 export interface UpdateFileItemData {
   id: string;
+  tokens: TokenData[];
   projectFileItemTranslation: ProjectFileItemTranslation;
 }
 
@@ -86,6 +87,7 @@ export interface TokenData {
   name: string;
   value: number;
   index: number;
+  type: number;
   displayName: string;
   possibleValues: { [index: number]: string };
 }

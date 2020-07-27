@@ -2,11 +2,11 @@ import { all, put, takeLatest } from "redux-saga/effects";
 import * as API from "../../api";
 import { ApiError } from "../../utils/errorTypes";
 import requestAPI from "../sagas/requestAPI";
-import { getUpdatedTranslations } from "../utils/fileContentUtils";
+import { getUpdatedProjectFileItem } from "../utils/fileContentUtils";
 import {
   ProjectFileContent,
   ProjectFileItem,
-  UpdateFileItemData
+  UpdateFileItemData,
 } from "./../entities";
 import { addLastError } from "./errors";
 
@@ -61,13 +61,13 @@ const INITIAL_STATE: FileContentState = {
 
 export const fetchFileContent = (
   projectId: string,
-  fileId: string,
+  fileId: string
 ): FileContentAction =>
   ({ type: FETCH_FILE_CONTENT, projectId, fileId } as FileContentAction);
 
 export const fetchFileContentSuccess = (
   projectFileItems: ProjectFileItem[],
-  targetLanguage: string,
+  targetLanguage: string
 ): FileContentAction =>
   ({
     type: FETCH_FILE_CONTENT_SUCCESS,
@@ -81,7 +81,7 @@ export const updateFileContent = (
   projectId: string,
   fileId: string,
   targetLanguage: string,
-  projectFileItems: ProjectFileItem[],
+  projectFileItems: ProjectFileItem[]
 ): FileContentAction =>
   ({
     type: UPDATE_FILE_CONTENT,
@@ -100,7 +100,7 @@ export const updateFileContentFailure = (error: ApiError) => ({
 });
 
 export const updateFileContentField = (
-  updateFileItemData: UpdateFileItemData,
+  updateFileItemData: UpdateFileItemData
 ): FileContentAction =>
   ({
     type: UPDATE_FILE_CONTENT_FIELD,
@@ -116,7 +116,7 @@ export const clearFileContent = (): FileContentAction =>
 
 export const fileContentReducer = (
   state: FileContentState = INITIAL_STATE,
-  action: FileContentAction,
+  action: FileContentAction
 ) => {
   switch (action.type) {
     case FETCH_FILE_CONTENT:
@@ -134,7 +134,7 @@ export const fileContentReducer = (
             ...acc,
             [fileContent.id]: fileContent,
           }),
-          {} as ProjectFileItem,
+          {} as ProjectFileItem
         ),
       };
     case FETCH_FILE_CONTENT_FAILURE:
@@ -147,13 +147,10 @@ export const fileContentReducer = (
         ...state,
         fileContentMap: {
           ...state.fileContentMap,
-          [action.updateFileItemData!.id]: {
-            ...state.fileContentMap[action.updateFileItemData!.id],
-            translations: getUpdatedTranslations(
-              state.fileContentMap[action.updateFileItemData!.id].translations,
-              action.updateFileItemData!.projectFileItemTranslation,
-            ),
-          },
+          [action.updateFileItemData!.id]: getUpdatedProjectFileItem(
+            state,
+            action
+          ),
         },
       };
     case UPDATE_FILE_CONTENT:
@@ -176,9 +173,9 @@ export const fileContentReducer = (
       return {
         ...state,
         filteredFileContentList: Object.values(
-          state.fileContentMap,
+          state.fileContentMap
         ).filter((projectFileItem: ProjectFileItem) =>
-          projectFileItem.source.toLowerCase().includes(action.searchTerm!),
+          projectFileItem.source.toLowerCase().includes(action.searchTerm!)
         ),
       };
     case CLEAR_FILTERED_FILE_CONTENT:
@@ -224,7 +221,7 @@ export function* fetchFileContentSaga({
     const { projectFileItems, targetLanguage } = yield* requestAPI(
       API.fetchFileContent,
       projectId,
-      fileId,
+      fileId
     );
     yield put(fetchFileContentSuccess(projectFileItems, targetLanguage));
   } catch (error) {

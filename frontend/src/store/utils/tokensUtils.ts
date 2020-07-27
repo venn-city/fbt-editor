@@ -26,6 +26,7 @@ export const getTokensData = (
         displayName: token.displayName,
         value: projectFileItemTranslation.variations[index] || 0,
         index: index,
+        type: token.type,
         possibleValues: getPossibleValues(token.type),
       } as TokenData;
       result.push(tokenData);
@@ -34,6 +35,7 @@ export const getTokensData = (
         name: token.name,
         displayName: token.displayName,
         value: 0,
+        type: token.type,
         index: result.length,
         possibleValues: getPossibleValues(token.type),
       } as TokenData;
