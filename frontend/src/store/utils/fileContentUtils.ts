@@ -9,11 +9,11 @@ import {
 
 export const getUpdatedTranslations = (
   translations: ProjectFileItemTranslation[],
-  newTranslation: ProjectFileItemTranslation,
+  newTranslation: ProjectFileItemTranslation
 ) => {
   const currentTranslation = getTranslationByVariation(
     translations,
-    newTranslation.variations,
+    newTranslation.variations
   );
   if (currentTranslation) {
     currentTranslation.translation = newTranslation.translation;
@@ -25,11 +25,11 @@ export const getUpdatedTranslations = (
 
 export const getUpdatedTokens = (
   translations: ProjectFileItemTranslation[],
-  newTranslation: ProjectFileItemTranslation,
+  newTranslation: ProjectFileItemTranslation
 ) => {
   const currentTranslation = getTranslationByVariation(
     translations,
-    newTranslation.variations,
+    newTranslation.variations
   );
   if (currentTranslation) {
     currentTranslation.translation = newTranslation.translation;
@@ -41,7 +41,7 @@ export const getUpdatedTokens = (
 
 export const getTranslationByVariation = (
   translations: ProjectFileItemTranslation[],
-  variations: { [index: number]: number },
+  variations: { [index: number]: number }
 ): ProjectFileItemTranslation | undefined => {
   let filteredTranslations = translations;
   const keys = Object.keys(variations);
@@ -50,7 +50,7 @@ export const getTranslationByVariation = (
       filteredTranslations,
       (itemTranslation: ProjectFileItemTranslation) => {
         return Object.keys(itemTranslation.variations).length === 0;
-      },
+      }
     );
   } else {
     const variationKeys = Object.keys(variations);
@@ -59,11 +59,14 @@ export const getTranslationByVariation = (
       filteredTranslations = _.filter(
         filteredTranslations,
         (itemTranslation: ProjectFileItemTranslation) => {
+          const variationsLength = Object.keys(itemTranslation.variations)
+            .length;
           return (
-            Object.keys(itemTranslation.variations).length > 0 &&
+            variationsLength > 0 &&
+            variationsLength === variationKeys.length &&
             itemTranslation.variations[index] == variations[index]
           );
-        },
+        }
       );
     }
   }
@@ -72,24 +75,24 @@ export const getTranslationByVariation = (
 
 export const getUpdatedProjectFileItem = (
   state: FileContentState,
-  action: FileContentAction,
+  action: FileContentAction
 ): ProjectFileItem => {
   const currentProjectFileItem =
     state.fileContentMap[action.updateFileItemData!.id];
   const translations = getUpdatedTranslations(
     currentProjectFileItem.translations,
-    action.updateFileItemData!.projectFileItemTranslation,
+    action.updateFileItemData!.projectFileItemTranslation
   );
   const hasNewTokens = _.some(
     translations,
     (t: ProjectFileItemTranslation) =>
-      t.variations[action.updateFileItemData!.tokens.length - 1],
+      t.variations[action.updateFileItemData!.tokens.length - 1]
   );
   const updatedTokens = hasNewTokens
     ? _.sortBy(
         action.updateFileItemData!.tokens,
-        (token: TokenData) => token.index,
-    ).map((t: TokenData) => mapTokenData(t))
+        (token: TokenData) => token.index
+      ).map((t: TokenData) => mapTokenData(t))
     : currentProjectFileItem.tokens;
 
   return {
