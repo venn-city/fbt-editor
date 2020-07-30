@@ -1,4 +1,4 @@
-import { RecentFile } from '@entities/RecentFile';
+import { RecentFile } from '@entities/project/RecentFile';
 import path from 'path';
 import RecentFileIdProvider from 'src/providers/RecentFileIdProvider';
 

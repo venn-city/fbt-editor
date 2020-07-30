@@ -1,4 +1,3 @@
 export class LoginUserRequest {
-    constructor(public tokenId: string, public email: string) {
-    }
-  }
+  constructor(public tokenId: string, public email: string) {}
+}

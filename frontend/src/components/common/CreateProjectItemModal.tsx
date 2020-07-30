@@ -11,60 +11,71 @@ import {
   MenuItem,
   Select,
   TextField,
-} from '@material-ui/core';
-import path from 'path';
-import React, { useEffect, useState } from 'react';
-import { ProjectItemType } from '../../store/entities';
-import { getTargetLanguageDisplayName, getTargetLanguageItems } from '../../utils/targetLanguage';
+} from "@material-ui/core";
+import path from "path";
+import React, { useEffect, useState } from "react";
+import { ProjectItemType } from "../../store/entities";
+import {
+  getTargetLanguageDisplayName,
+  getTargetLanguageItems,
+} from "../../utils/targetLanguage";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: 500,
-  },
-  button: {},
-  saveButton: {},
-  dialogContent: {
-    overflow: 'initial',
-  },
-  targetLanguage: {
-    marginTop: theme.spacing(2),
-  },
-}), { name: 'CreateProjectItemModal' });
+const useStyles = makeStyles(
+  theme => ({
+    root: {
+      width: 500,
+    },
+    button: {},
+    saveButton: {},
+    dialogContent: {
+      overflow: "initial",
+    },
+    targetLanguage: {
+      marginTop: theme.spacing(2),
+    },
+  }),
+  { name: "CreateProjectItemModal" },
+);
 
 export interface CreateProjectItemModalProps {
   projectItemType: ProjectItemType;
   open: boolean;
   onClose: () => void;
-  onSave: (projectItemName: string, targetLanguage: string|undefined) => void
+  onSave: (projectItemName: string, targetLanguage: string | undefined) => void;
 }
 
-const CreateProjectItemModal = ({ projectItemType, open, onClose, onSave }: CreateProjectItemModalProps) => {
+const CreateProjectItemModal = ({
+  projectItemType,
+  open,
+  onClose,
+  onSave,
+}: CreateProjectItemModalProps) => {
   const classes = useStyles();
-  const [projectItemName, setProjectItemName] = useState('');
-  const [targetLanguage, setTargetLanguage] = useState('');
+  const [projectItemName, setProjectItemName] = useState("");
+  const [targetLanguage, setTargetLanguage] = useState("");
   const isFile = projectItemType === ProjectItemType.File;
-  const dialogContentText = `Enter a ${projectItemType.toLowerCase()} name ${isFile ? 'and target language' : ''} below:`;
+  const dialogContentText = `Enter a ${projectItemType.toLowerCase()} name ${
+    isFile ? "and target language" : ""
+  } below:`;
   const [isSaveButtonDisabled, setIsSaveButtonDisabled] = useState(false);
 
   useEffect(() => {
     if (isFile) {
-      setIsSaveButtonDisabled(projectItemName === '' || path.extname(projectItemName) === '' || targetLanguage === '');
+      setIsSaveButtonDisabled(
+        projectItemName === "" ||
+          path.extname(projectItemName) === "" ||
+          targetLanguage === "",
+      );
       return;
     }
-    setIsSaveButtonDisabled(projectItemName === '');
+    setIsSaveButtonDisabled(projectItemName === "");
   }, [projectItemName, targetLanguage, isFile]);
 
   return (
-    <Dialog
-      classes={{ paper: classes.root }}
-      open={open}
-      onClose={onClose}
-    >
+    <Dialog classes={{ paper: classes.root }} open={open} onClose={onClose}>
       <DialogTitle>{projectItemType} creating</DialogTitle>
       <DialogContent className={classes.dialogContent}>
-        <DialogContentText>
-          {dialogContentText}
-        </DialogContentText>
+        <DialogContentText>{dialogContentText}</DialogContentText>
         <TextField
           autoFocus
           fullWidth
@@ -79,11 +90,15 @@ const CreateProjectItemModal = ({ projectItemType, open, onClose, onSave }: Crea
             <Select
               required
               value={targetLanguage}
-              onChange={({ target: { value } }: any) => setTargetLanguage(value)}
+              onChange={({ target: { value } }: any) =>
+                setTargetLanguage(value)
+              }
             >
-              {getTargetLanguageItems().map(({ code, name }) =>
-                <MenuItem key={code} value={code}>{getTargetLanguageDisplayName(code, name)}</MenuItem>,
-              )}
+              {getTargetLanguageItems().map(({ code, name }) => (
+                <MenuItem key={code} value={code}>
+                  {getTargetLanguageDisplayName(code, name)}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         )}
@@ -94,8 +109,8 @@ const CreateProjectItemModal = ({ projectItemType, open, onClose, onSave }: Crea
           variant="outlined"
           onClick={() => {
             onClose();
-            setProjectItemName('');
-            setTargetLanguage('');
+            setProjectItemName("");
+            setTargetLanguage("");
           }}
         >
           Cancel
@@ -106,9 +121,9 @@ const CreateProjectItemModal = ({ projectItemType, open, onClose, onSave }: Crea
           disabled={isSaveButtonDisabled}
           variant="outlined"
           onClick={() => {
-            onSave(projectItemName, targetLanguage.replace('-', '_'));
-            setProjectItemName('');
-            setTargetLanguage('');
+            onSave(projectItemName, targetLanguage.replace("-", "_"));
+            setProjectItemName("");
+            setTargetLanguage("");
           }}
         >
           Save

@@ -1,3 +1,5 @@
+import TranslationSourceToken from './TranslationSourceToken';
+
 export default class TranslationSourceItem {
     constructor(
         public hashToText: { [Key: string]: string; },
@@ -9,7 +11,7 @@ export default class TranslationSourceItem {
         public type: string,
         public desc: string,
         public project: string,
-        public jsfbt: string
+        public jsfbt: string | TranslationSourceToken
     ) {
 
     }

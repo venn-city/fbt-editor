@@ -1,6 +1,6 @@
 import { Router } from "express";
-import ProjectItemController from 'src/controllers/ProjectItemController';
-import mustAuthenticated from 'src/middlewares/mustAuthenticated';
+import ProjectItemController from "src/controllers/ProjectItemController";
+import mustAuthenticated from "src/middlewares/mustAuthenticated";
 
 // Init shared
 const router = Router();
@@ -34,7 +34,7 @@ router.delete("/", mustAuthenticated, ProjectItemController.deleteItem);
 router.post("/", mustAuthenticated, ProjectItemController.createItem);
 
 // tslint:disable-next-line: no-unbound-method
-router.post("/upload", mustAuthenticated,  ProjectItemController.uploadItem);
+router.post("/upload", mustAuthenticated, ProjectItemController.uploadItem);
 
 /******************************************************************************
  *                                     Export

@@ -1,6 +1,6 @@
 import { Router } from "express";
-import ProjectItemContentController from 'src/controllers/ProjectItemContentController';
-import mustAuthenticated from 'src/middlewares/mustAuthenticated';
+import ProjectItemContentController from "src/controllers/ProjectItemContentController";
+import mustAuthenticated from "src/middlewares/mustAuthenticated";
 
 // Init shared
 const router = Router();
@@ -9,8 +9,12 @@ const router = Router();
  *                      Get file content - "GET /api/project-item-content/:projectId?fileId=fileId"
  **********************************************************************/
 
-// tslint:disable-next-line: no-unbound-method
-router.get("/:projectId", mustAuthenticated, ProjectItemContentController.getfileContent);
+router.get(
+  "/:projectId",
+  mustAuthenticated,
+  // tslint:disable-next-line: no-unbound-method
+  ProjectItemContentController.getfileContent
+);
 
 /******************************************************************************
  *                      Update file content - "PUT /api/project-item-content/"
@@ -21,8 +25,12 @@ router.get("/:projectId", mustAuthenticated, ProjectItemContentController.getfil
  *                          projectFileItems: ProjectFileItem[]
  ******************************************************************************/
 
-// tslint:disable-next-line: no-unbound-method
-router.put("/", mustAuthenticated, ProjectItemContentController.updatefileContent);
+router.put(
+  "/",
+  mustAuthenticated,
+  // tslint:disable-next-line: no-unbound-method
+  ProjectItemContentController.updatefileContent
+);
 
 /******************************************************************************
  *                                     Export
