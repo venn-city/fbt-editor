@@ -1,5 +1,6 @@
 {
   "name": "backend",
+  "private": true,
   "version": "0.0.0",
   "scripts": {
     "build": "node build.js",
