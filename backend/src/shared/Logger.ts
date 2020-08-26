@@ -19,7 +19,7 @@ const logger = createLogger({
  * to `combined.log. Write all logs error (and below) to `error.log`.
  * For development, print to the console.
  */
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production" && process.env.OUTPUT_LOG_FILES === 'true') {
   const fileFormat = format.combine(format.timestamp(), format.json());
   const errTransport = new File({
     filename: "./logs/error.log",
