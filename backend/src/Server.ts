@@ -9,7 +9,7 @@ import morgan from "morgan";
 import path from "path";
 import AuthenticationProvider from "./providers/AuthenticationProvider";
 import BaseRouter from "./routes";
-
+const API_PREFIX = process.env.API_PREFIX || '';
 const authenticationProvider = new AuthenticationProvider();
 // Init express
 const app = express();
@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add APIs
-app.use("/api", BaseRouter);
+app.use(API_PREFIX + "/api", BaseRouter);
 
 // Print API errors
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
