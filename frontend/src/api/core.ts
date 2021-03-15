@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ApiError } from "../utils/errorTypes";
 
-const API_BASE_URL = process.env.REACT_API_BASE_URL || '';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
 export const getAPIPath = (path: string) => `${API_BASE_URL}/api/${path}`;
 
 export async function request<TData>(
