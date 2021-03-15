@@ -9,6 +9,8 @@ import morgan from "morgan";
 import path from "path";
 import AuthenticationProvider from "./providers/AuthenticationProvider";
 import BaseRouter from "./routes";
+import cors from 'cors';
+
 const API_PREFIX = process.env.API_PREFIX || '';
 const authenticationProvider = new AuthenticationProvider();
 // Init express
@@ -22,6 +24,7 @@ const app = express();
 app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use(cookieParser(authenticationProvider.getCookiesSecret()));
 
 // Show routes called in console during development
