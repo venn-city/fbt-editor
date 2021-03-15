@@ -40,6 +40,7 @@ export default class AuthenticationProvider {
   public setAuthCookies(res: Response, token: string): void {
     const authCookie = new AuthenticationCookies(token, md5(token));
     res.cookie(this.cookiesTokenName, JSON.stringify(authCookie), {
+      domain: process.env.COOKIE_DOMAIN,
       maxAge: this.getCookiesMaxAge(),
       signed: true,
     });
