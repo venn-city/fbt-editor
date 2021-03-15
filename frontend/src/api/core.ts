@@ -8,7 +8,7 @@ export async function request<TData>(
   path: string,
   params = {},
 ): Promise<TData> {
-  return axios({ ...params, url: path })
+  return axios({ ...params, url: path, withCredentials: true })
     .then(({ data }) => data as TData)
     .catch(error => {
       throw new ApiError(error, "src/api/index.js");
@@ -19,7 +19,7 @@ export async function postFormData(
   path: string,
   formData: FormData,
 ): Promise<void> {
-  const config = { headers: { "Content-Type": "multipart/form-data" } };
+  const config = { headers: { "Content-Type": "multipart/form-data" }, withCredentials: true };
   return axios.post<any, void>(path, formData, config).catch(error => {
     throw new ApiError(error, "src/api/index.js");
   });
