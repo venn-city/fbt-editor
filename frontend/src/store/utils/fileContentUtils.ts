@@ -64,7 +64,7 @@ export const getTranslationByVariation = (
           return (
             variationsLength > 0 &&
             variationsLength === variationKeys.length &&
-            itemTranslation.variations[index] == variations[index]
+            itemTranslation.variations[index] === variations[index]
           );
         },
       );

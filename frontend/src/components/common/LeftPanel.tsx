@@ -118,7 +118,7 @@ const LeftPanel = ({
         pathname: `/login`,
       });
     }
-  }, [dispatch, currentUser, isLoggedIn]);
+  }, [dispatch, currentUser, isLoggedIn, push]);
 
   useEffect(() => {}, [dispatch, currentUser, isLoggedIn]);
 

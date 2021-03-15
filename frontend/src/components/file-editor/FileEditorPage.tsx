@@ -44,7 +44,7 @@ const FileEditorPage = () => {
     if (projectId && folderPath) {
       dispatch(fetchProjectItemsList(projectId, `${folderPath}/`));
     }
-  }, [dispatch, folderPath]);
+  }, [dispatch, folderPath, projectId]);
 
   return (
     <Grid container>

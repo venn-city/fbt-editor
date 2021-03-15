@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { Grid, makeStyles, TextField } from "@material-ui/core";
 import _ from "lodash";
 import React, { useEffect, useState } from "react";
@@ -63,7 +65,7 @@ const FileContentRow = ({
     tokenIndex: number | null,
     tokenValue: number | null,
   ) => {
-    return tokenIndex !== null && tokenValue !== null && tokenValue != 0;
+    return tokenIndex !== null && tokenValue !== null && tokenValue !== 0;
   };
 
   useEffect(() => {

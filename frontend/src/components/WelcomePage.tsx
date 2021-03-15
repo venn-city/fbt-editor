@@ -5,7 +5,7 @@ import GoogleLogin, {
   GoogleLoginResponseOffline,
 } from "react-google-login";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useRouteMatch } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {
   fetchAuthClientData,
   getAuthClientData,
@@ -36,9 +36,6 @@ const useStyles = makeStyles(
 const WelcomePage = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const {
-    params: { projectId },
-  } = useRouteMatch();
   const { push } = useHistory();
   const isLoggedIn = useSelector(getIsLoggedIn);
   const currentUser: CurrentUser | null = useSelector(getCurrentUser);
@@ -54,7 +51,7 @@ const WelcomePage = () => {
         pathname: `/projects`,
       });
     }
-  }, [dispatch, currentUser, isLoggedIn]);
+  }, [dispatch, currentUser, isLoggedIn, push]);
 
   useEffect(() => {
     if (isLoggedIn && currentUser) {

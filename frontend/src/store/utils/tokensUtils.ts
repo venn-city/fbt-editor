@@ -49,7 +49,7 @@ const getPossibleValues = (tokenType: number): { [key: number]: string } => {
   if (tokenType === 3) {
     return TokenGender;
   }
-  if (tokenType == 28) {
+  if (tokenType === 28) {
     return TokenNumber;
   }
   return {};

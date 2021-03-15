@@ -7,7 +7,7 @@ export class ApiError extends BaseError {
   constructor(cause = {}, filename: string) {
     // @ts-ignore
     const { config = {}, response = {} } = cause;
-    const { url = 'unknown url', method, params } = config;
+    const { url = 'unknown url', method } = config;
     const { status, data } = response;
     const extendedMessage = `${method} ${url} results with ${status}`;
 
