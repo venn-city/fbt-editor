@@ -24,7 +24,12 @@ const app = express();
 app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+if(process.env.CORS_ORIGIN){
+  app.use(cors({
+    credentials: true,
+    origin: process.env.CORS_ORIGIN
+  }));
+}
 app.use(cookieParser(authenticationProvider.getCookiesSecret()));
 
 // Show routes called in console during development
