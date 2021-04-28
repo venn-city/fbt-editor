@@ -10,6 +10,7 @@ import path from "path";
 import AuthenticationProvider from "./providers/AuthenticationProvider";
 import BaseRouter from "./routes";
 import cors from 'cors';
+import bodyParser from 'body-parser';
 
 const API_PREFIX = process.env.API_PREFIX || '';
 const authenticationProvider = new AuthenticationProvider();
@@ -23,13 +24,26 @@ const app = express();
 // default options
 app.use(fileUpload());
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
+
 if(process.env.CORS_ORIGIN){
   app.use(cors({
     credentials: true,
     origin: process.env.CORS_ORIGIN
   }));
 }
+
+app.use(bodyParser.json({
+  limit: '50mb'
+}));
+
+app.use(bodyParser.urlencoded({
+  limit: '50mb',
+  parameterLimit: 100000,
+  extended: true
+}));
+
 app.use(cookieParser(authenticationProvider.getCookiesSecret()));
 
 // Show routes called in console during development
