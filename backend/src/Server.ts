@@ -23,17 +23,6 @@ const app = express();
 
 // default options
 app.use(fileUpload());
-app.use(express.json());
-
-app.use(express.urlencoded({ extended: true }));
-
-if(process.env.CORS_ORIGIN){
-  app.use(cors({
-    credentials: true,
-    origin: process.env.CORS_ORIGIN
-  }));
-}
-
 app.use(bodyParser.json({
   limit: '50mb'
 }));
@@ -43,6 +32,16 @@ app.use(bodyParser.urlencoded({
   parameterLimit: 100000,
   extended: true
 }));
+// app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+
+if(process.env.CORS_ORIGIN){
+  app.use(cors({
+    credentials: true,
+    origin: process.env.CORS_ORIGIN
+  }));
+}
 
 app.use(cookieParser(authenticationProvider.getCookiesSecret()));
 
