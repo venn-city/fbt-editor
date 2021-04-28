@@ -32,7 +32,6 @@ app.use(bodyParser.urlencoded({
   parameterLimit: 100000,
   extended: true
 }));
-// app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
